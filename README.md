@@ -7,8 +7,8 @@
 ## Для агентов
 
 1. Сначала открой этот README и выбери область (GoF / Frontend / Backend).
-2. Перейди к файлу паттерна (`.js` — мини-демо + метаданные; `.md` рядом — развёрнутое объяснение, если есть).
-3. В коде и ревью оставляй ссылку на конкретный файл:
+2. Перейди к папке паттерна (`.js` — демо + метаданные; `.md` — объяснение). Правила раскладки — в [AGENTS.md](./AGENTS.md).
+3. В коде и ревью оставляй ссылку на `.md`:
 
 ```text
 https://github.com/danilger/patterns/blob/main/<путь-к-файлу>
@@ -17,137 +17,145 @@ https://github.com/danilger/patterns/blob/main/<путь-к-файлу>
 Пример:
 
 ```text
-https://github.com/danilger/patterns/blob/main/frontend/react/compound-components.md
+https://github.com/danilger/patterns/blob/main/frontend/react/compound-components/compound-components.md
 ```
 
 В `AGENTS.md` целевого проекта достаточно указать корень библиотеки:
 
 ```text
 Паттерны: https://github.com/danilger/patterns
-Каталог по областям — в README. Ссылку на объяснение конкретного паттерна оставляй в комментарии/PR.
+Каталог — README.md; правила файлов — AGENTS.md в том же репо.
+Ссылку на объяснение конкретного паттерна оставляй в комментарии/PR.
 ```
 
 ## Структура
 
+Каждый паттерн — папка `<slug>/` с парой `<slug>.js` + `<slug>.md`.
+
 ```text
 patterns/
-├── gof/                 # классика Gang of Four
-│   ├── creational/
-│   ├── structural/
-│   └── behavioral/
+├── AGENTS.md                 # правила раскладки для агентов
+├── README.md                 # этот индекс
+├── gof/
+│   ├── creational/<slug>/
+│   ├── structural/<slug>/
+│   ├── behavioral/<slug>/
+│   └── js-language-builtins/ # мета: GoF во встроенных конструкциях JS
 ├── frontend/
-│   ├── react/           # паттерны React / UI composition
-│   ├── rendering/       # CSR, SSR, SSG, streaming…
-│   └── performance/     # lazy load, splitting, virtualization
+│   ├── react/<slug>/
+│   ├── rendering/<slug>/
+│   └── performance/<slug>/
 └── backend/
-    └── nest/            # NestJS / серверный слой
+    └── nest/<slug>/
 ```
 
 ---
 
 ## GoF — порождающие (`gof/creational/`)
 
-| Паттерн | Файл |
-|---------|------|
-| Singleton (Одиночка) | [singleton.js](gof/creational/singleton.js) |
-| Factory Method (Фабричный метод) | [factory-method.js](gof/creational/factory-method.js) |
-| Abstract Factory (Абстрактная фабрика) | [abstract-factory.js](gof/creational/abstract-factory.js) |
-| Builder (Строитель) | [builder.js](gof/creational/builder.js) |
-| Prototype (Прототип) | [prototype.js](gof/creational/prototype.js) |
+| Паттерн | Файлы |
+|---------|-------|
+| Abstract Factory (Абстрактная фабрика) | [`.js`](gof/creational/abstract-factory/abstract-factory.js) · [`.md`](gof/creational/abstract-factory/abstract-factory.md) |
+| Builder (Строитель) | [`.js`](gof/creational/builder/builder.js) · [`.md`](gof/creational/builder/builder.md) |
+| Factory Method (Фабричный метод) | [`.js`](gof/creational/factory-method/factory-method.js) · [`.md`](gof/creational/factory-method/factory-method.md) |
+| Prototype (Прототип) | [`.js`](gof/creational/prototype/prototype.js) · [`.md`](gof/creational/prototype/prototype.md) |
+| Singleton (Одиночка) | [`.js`](gof/creational/singleton/singleton.js) · [`.md`](gof/creational/singleton/singleton.md) |
 
 ## GoF — структурные (`gof/structural/`)
 
-| Паттерн | Файл |
-|---------|------|
-| Adapter (Адаптер) | [adapter.js](gof/structural/adapter.js) |
-| Bridge (Мост) | [bridge.js](gof/structural/bridge.js) |
-| Composite (Компоновщик) | [composite.js](gof/structural/composite.js) |
-| Decorator (Декоратор) | [decorator.js](gof/structural/decorator.js) |
-| Facade (Фасад) | [facade.js](gof/structural/facade.js) |
-| Flyweight (Приспособленец) | [flyweight.js](gof/structural/flyweight.js) |
-| Proxy (Заместитель) | [proxy.js](gof/structural/proxy.js) |
+| Паттерн | Файлы |
+|---------|-------|
+| Adapter (Адаптер) | [`.js`](gof/structural/adapter/adapter.js) · [`.md`](gof/structural/adapter/adapter.md) |
+| Bridge (Мост) | [`.js`](gof/structural/bridge/bridge.js) · [`.md`](gof/structural/bridge/bridge.md) |
+| Composite (Компоновщик) | [`.js`](gof/structural/composite/composite.js) · [`.md`](gof/structural/composite/composite.md) |
+| Decorator (Декоратор) | [`.js`](gof/structural/decorator/decorator.js) · [`.md`](gof/structural/decorator/decorator.md) |
+| Facade (Фасад) | [`.js`](gof/structural/facade/facade.js) · [`.md`](gof/structural/facade/facade.md) |
+| Flyweight (Приспособленец) | [`.js`](gof/structural/flyweight/flyweight.js) · [`.md`](gof/structural/flyweight/flyweight.md) |
+| Proxy (Заместитель) | [`.js`](gof/structural/proxy/proxy.js) · [`.md`](gof/structural/proxy/proxy.md) |
 
 ## GoF — поведенческие (`gof/behavioral/`)
 
-| Паттерн | Файл |
-|---------|------|
-| Chain of Responsibility | [chain-of-responsibility.js](gof/behavioral/chain-of-responsibility.js) |
-| Command (Команда) | [command.js](gof/behavioral/command.js) |
-| Interpreter (Интерпретатор) | [interpreter.js](gof/behavioral/interpreter.js) |
-| Iterator (Итератор) | [iterator.js](gof/behavioral/iterator.js) |
-| Mediator (Посредник) | [mediator.js](gof/behavioral/mediator.js) |
-| Memento (Хранитель) | [memento.js](gof/behavioral/memento.js) |
-| Observer (Наблюдатель) | [observer.js](gof/behavioral/observer.js) |
-| State (Состояние) | [state.js](gof/behavioral/state.js) |
-| Strategy (Стратегия) | [strategy.js](gof/behavioral/strategy.js) |
-| Template Method | [template-method.js](gof/behavioral/template-method.js) |
-| Visitor (Посетитель) | [visitor.js](gof/behavioral/visitor.js) |
+| Паттерн | Файлы |
+|---------|-------|
+| Chain of Responsibility (Цепочка обязанностей) | [`.js`](gof/behavioral/chain-of-responsibility/chain-of-responsibility.js) · [`.md`](gof/behavioral/chain-of-responsibility/chain-of-responsibility.md) |
+| Command (Команда) | [`.js`](gof/behavioral/command/command.js) · [`.md`](gof/behavioral/command/command.md) |
+| Interpreter (Интерпретатор) | [`.js`](gof/behavioral/interpreter/interpreter.js) · [`.md`](gof/behavioral/interpreter/interpreter.md) |
+| Iterator (Итератор) | [`.js`](gof/behavioral/iterator/iterator.js) · [`.md`](gof/behavioral/iterator/iterator.md) |
+| Mediator (Посредник) | [`.js`](gof/behavioral/mediator/mediator.js) · [`.md`](gof/behavioral/mediator/mediator.md) |
+| Memento (Хранитель) | [`.js`](gof/behavioral/memento/memento.js) · [`.md`](gof/behavioral/memento/memento.md) |
+| Observer (Наблюдатель) | [`.js`](gof/behavioral/observer/observer.js) · [`.md`](gof/behavioral/observer/observer.md) |
+| State (Состояние) | [`.js`](gof/behavioral/state/state.js) · [`.md`](gof/behavioral/state/state.md) |
+| Strategy (Стратегия) | [`.js`](gof/behavioral/strategy/strategy.js) · [`.md`](gof/behavioral/strategy/strategy.md) |
+| Template Method (Шаблонный метод) | [`.js`](gof/behavioral/template-method/template-method.js) · [`.md`](gof/behavioral/template-method/template-method.md) |
+| Visitor (Посетитель) | [`.js`](gof/behavioral/visitor/visitor.js) · [`.md`](gof/behavioral/visitor/visitor.md) |
 
-Дополнительно: [gof/js-language-builtins.js](gof/js-language-builtins.js) — как идеи GoF проявляются во встроенных конструкциях JS.
+Дополнительно: [`js-language-builtins`](gof/js-language-builtins/js-language-builtins.md) — как идеи GoF проявляются во встроенных конструкциях JS.
 
 ---
 
 ## Frontend — React (`frontend/react/`)
 
-| Паттерн | Файл |
-|---------|------|
-| Hooks | [hooks.js](frontend/react/hooks.js) |
-| Custom Hooks | [custom-hooks.js](frontend/react/custom-hooks.js) |
-| Higher-Order Component (HOC) | [hoc.js](frontend/react/hoc.js) |
-| Render Props | [render-props.js](frontend/react/render-props.js) |
-| Provider (Context) | [provider.js](frontend/react/provider.js) |
-| Compound Components | [compound-components.js](frontend/react/compound-components.js) · [compound-components.md](frontend/react/compound-components.md) |
-| Container / Presentational | [container-presentational.js](frontend/react/container-presentational.js) |
-| Lifting State Up | [lifting-state.js](frontend/react/lifting-state.js) |
-| Controlled / Uncontrolled | [controlled-uncontrolled.js](frontend/react/controlled-uncontrolled.js) |
-| State Reducer | [state-reducer.js](frontend/react/state-reducer.js) |
+| Паттерн | Файлы |
+|---------|-------|
+| Compound Components | [`.js`](frontend/react/compound-components/compound-components.js) · [`.md`](frontend/react/compound-components/compound-components.md) |
+| Container / Presentational | [`.js`](frontend/react/container-presentational/container-presentational.js) · [`.md`](frontend/react/container-presentational/container-presentational.md) |
+| Controlled / Uncontrolled Components | [`.js`](frontend/react/controlled-uncontrolled/controlled-uncontrolled.js) · [`.md`](frontend/react/controlled-uncontrolled/controlled-uncontrolled.md) |
+| Custom Hooks | [`.js`](frontend/react/custom-hooks/custom-hooks.js) · [`.md`](frontend/react/custom-hooks/custom-hooks.md) |
+| Higher-Order Component (HOC) | [`.js`](frontend/react/hoc/hoc.js) · [`.md`](frontend/react/hoc/hoc.md) |
+| Hooks | [`.js`](frontend/react/hooks/hooks.js) · [`.md`](frontend/react/hooks/hooks.md) |
+| Lifting State Up | [`.js`](frontend/react/lifting-state/lifting-state.js) · [`.md`](frontend/react/lifting-state/lifting-state.md) |
+| Provider (Context) | [`.js`](frontend/react/provider/provider.js) · [`.md`](frontend/react/provider/provider.md) |
+| Render Props | [`.js`](frontend/react/render-props/render-props.js) · [`.md`](frontend/react/render-props/render-props.md) |
+| State Reducer | [`.js`](frontend/react/state-reducer/state-reducer.js) · [`.md`](frontend/react/state-reducer/state-reducer.md) |
 
 ## Frontend — рендеринг (`frontend/rendering/`)
 
-| Паттерн | Файл |
-|---------|------|
-| Client-Side Rendering (CSR) | [client-side-rendering.js](frontend/rendering/client-side-rendering.js) |
-| Server-Side Rendering (SSR) | [server-side-rendering.js](frontend/rendering/server-side-rendering.js) |
-| Static Rendering (SSG) | [static-rendering.js](frontend/rendering/static-rendering.js) |
-| Streaming SSR | [streaming-ssr.js](frontend/rendering/streaming-ssr.js) |
-| Incremental Static Regeneration (ISR) | [incremental-static-regeneration.js](frontend/rendering/incremental-static-regeneration.js) |
-| Islands Architecture | [islands-architecture.js](frontend/rendering/islands-architecture.js) |
+| Паттерн | Файлы |
+|---------|-------|
+| Client-Side Rendering (CSR) | [`.js`](frontend/rendering/client-side-rendering/client-side-rendering.js) · [`.md`](frontend/rendering/client-side-rendering/client-side-rendering.md) |
+| Incremental Static Regeneration (ISR) | [`.js`](frontend/rendering/incremental-static-regeneration/incremental-static-regeneration.js) · [`.md`](frontend/rendering/incremental-static-regeneration/incremental-static-regeneration.md) |
+| Islands Architecture | [`.js`](frontend/rendering/islands-architecture/islands-architecture.js) · [`.md`](frontend/rendering/islands-architecture/islands-architecture.md) |
+| Server-Side Rendering (SSR) | [`.js`](frontend/rendering/server-side-rendering/server-side-rendering.js) · [`.md`](frontend/rendering/server-side-rendering/server-side-rendering.md) |
+| Static Rendering (SSG) | [`.js`](frontend/rendering/static-rendering/static-rendering.js) · [`.md`](frontend/rendering/static-rendering/static-rendering.md) |
+| Streaming SSR | [`.js`](frontend/rendering/streaming-ssr/streaming-ssr.js) · [`.md`](frontend/rendering/streaming-ssr/streaming-ssr.md) |
 
 ## Frontend — производительность (`frontend/performance/`)
 
-| Паттерн | Файл |
-|---------|------|
-| Code Splitting / Dynamic Import | [code-splitting.js](frontend/performance/code-splitting.js) |
-| Lazy Loading | [lazy-loading.js](frontend/performance/lazy-loading.js) |
-| Import on Interaction | [import-on-interaction.js](frontend/performance/import-on-interaction.js) |
-| Import on Visibility | [import-on-visibility.js](frontend/performance/import-on-visibility.js) |
-| List Virtualization (Windowing) | [list-virtualization.js](frontend/performance/list-virtualization.js) |
+| Паттерн | Файлы |
+|---------|-------|
+| Code Splitting / Dynamic Import | [`.js`](frontend/performance/code-splitting/code-splitting.js) · [`.md`](frontend/performance/code-splitting/code-splitting.md) |
+| Import on Interaction | [`.js`](frontend/performance/import-on-interaction/import-on-interaction.js) · [`.md`](frontend/performance/import-on-interaction/import-on-interaction.md) |
+| Import on Visibility | [`.js`](frontend/performance/import-on-visibility/import-on-visibility.js) · [`.md`](frontend/performance/import-on-visibility/import-on-visibility.md) |
+| Lazy Loading | [`.js`](frontend/performance/lazy-loading/lazy-loading.js) · [`.md`](frontend/performance/lazy-loading/lazy-loading.md) |
+| List Virtualization (Windowing) | [`.js`](frontend/performance/list-virtualization/list-virtualization.js) · [`.md`](frontend/performance/list-virtualization/list-virtualization.md) |
 
 ---
 
 ## Backend — NestJS (`backend/nest/`)
 
-| Паттерн | Файл |
-|---------|------|
-| Dependency Injection (IoC) | [dependency-injection.js](backend/nest/dependency-injection.js) |
-| Feature Module | [feature-module.js](backend/nest/feature-module.js) |
-| Config Module | [config-module.js](backend/nest/config-module.js) |
-| Repository | [repository.js](backend/nest/repository.js) |
-| Thin Controller / Application Service | [thin-controller.js](backend/nest/thin-controller.js) |
-| DTO + Validation (Pipe) | [dto-validation.js](backend/nest/dto-validation.js) |
-| Guard | [guard.js](backend/nest/guard.js) |
-| Interceptor | [interceptor.js](backend/nest/interceptor.js) |
-| Exception Filter | [exception-filter.js](backend/nest/exception-filter.js) |
-| Strategy (Auth / Passport) | [strategy-auth.js](backend/nest/strategy-auth.js) |
-| Adapter (External services) | [adapter-external.js](backend/nest/adapter-external.js) |
-| Domain Events (Observer) | [domain-events.js](backend/nest/domain-events.js) |
-| CQRS (lite) | [cqrs-lite.js](backend/nest/cqrs-lite.js) |
+| Паттерн | Файлы |
+|---------|-------|
+| Adapter (External services) | [`.js`](backend/nest/adapter-external/adapter-external.js) · [`.md`](backend/nest/adapter-external/adapter-external.md) |
+| Config Module | [`.js`](backend/nest/config-module/config-module.js) · [`.md`](backend/nest/config-module/config-module.md) |
+| CQRS (lite) | [`.js`](backend/nest/cqrs-lite/cqrs-lite.js) · [`.md`](backend/nest/cqrs-lite/cqrs-lite.md) |
+| Dependency Injection (IoC) | [`.js`](backend/nest/dependency-injection/dependency-injection.js) · [`.md`](backend/nest/dependency-injection/dependency-injection.md) |
+| Domain Events (Observer) | [`.js`](backend/nest/domain-events/domain-events.js) · [`.md`](backend/nest/domain-events/domain-events.md) |
+| DTO + Validation (Pipe) | [`.js`](backend/nest/dto-validation/dto-validation.js) · [`.md`](backend/nest/dto-validation/dto-validation.md) |
+| Exception Filter | [`.js`](backend/nest/exception-filter/exception-filter.js) · [`.md`](backend/nest/exception-filter/exception-filter.md) |
+| Feature Module | [`.js`](backend/nest/feature-module/feature-module.js) · [`.md`](backend/nest/feature-module/feature-module.md) |
+| Guard | [`.js`](backend/nest/guard/guard.js) · [`.md`](backend/nest/guard/guard.md) |
+| Interceptor | [`.js`](backend/nest/interceptor/interceptor.js) · [`.md`](backend/nest/interceptor/interceptor.md) |
+| Repository | [`.js`](backend/nest/repository/repository.js) · [`.md`](backend/nest/repository/repository.md) |
+| Strategy (Auth / Passport) | [`.js`](backend/nest/strategy-auth/strategy-auth.js) · [`.md`](backend/nest/strategy-auth/strategy-auth.md) |
+| Thin Controller / Application Service (Facade) | [`.js`](backend/nest/thin-controller/thin-controller.js) · [`.md`](backend/nest/thin-controller/thin-controller.md) |
 
 ---
 
 ## Соглашения
 
-- Один паттерн ≈ один файл (или пара `.js` + `.md`).
+Полные правила — в [AGENTS.md](./AGENTS.md). Кратко:
+
+- Один паттерн = одна папка `<slug>/` с `<slug>.js` + `<slug>.md`.
 - В шапке `.js`: `@pattern`, `@area` / `@category`, `@description`, `@when`.
-- Развёрнутое объяснение — в одноимённом `.md` (предпочтительно для ссылок из кода).
-- Демо в `.js` — минимальное и читаемое, без фреймворк-шума, где это возможно.
+- Для ссылок из кода используй `.md`.
+- Демо в `.js` — минимальное; смысл паттерна — в `.md`.
