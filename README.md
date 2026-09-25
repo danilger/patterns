@@ -6,8 +6,32 @@
 
 ## Для агентов
 
-1. Сначала открой этот README и выбери область (GoF / Frontend / Backend).
-2. Перейди к папке паттерна (`.js` — демо + метаданные; `.md` — объяснение). Правила раскладки — в [AGENTS.md](./AGENTS.md).
+### Подключить в свой проект
+
+Пакет для продуктовых репо: **[consume/](./consume/)**  
+(GitHub: https://github.com/danilger/patterns/tree/main/consume)
+
+| Что | Где забрать | Куда положить |
+|-----|-------------|---------------|
+| **Правило** | [consume/AGENTS.snippet.md](./consume/AGENTS.snippet.md) | Вставить в `AGENTS.md` продукта |
+| **Skill** (только планы) | [consume/skills/compose-from-patterns/](./consume/skills/compose-from-patterns/) | `.cursor/skills/compose-from-patterns/` или `~/.cursor/skills/compose-from-patterns/` |
+| **Аннотации** | [consume/annotation.md](./consume/annotation.md) | Следовать при разметке кода / PR |
+
+Прямые ссылки:
+
+```text
+https://github.com/danilger/patterns/blob/main/consume/AGENTS.snippet.md
+https://github.com/danilger/patterns/blob/main/consume/skills/compose-from-patterns/SKILL.md
+https://github.com/danilger/patterns/blob/main/consume/annotation.md
+```
+
+- Skill с `disable-model-invocation: true` — вызывать **только** в Plan mode / opsx-propose / opsx-explore / явно.
+- [AGENTS.md](./AGENTS.md) в корне этого репо — правила **сопровождения каталога**, не путать со snippet для продуктов.
+
+### Как пользоваться каталогом
+
+1. Открой этот README и выбери область (GoF / Frontend / Backend).
+2. Перейди к папке паттерна (`.js` — демо; `.md` — объяснение).
 3. В коде и ревью оставляй ссылку на `.md`:
 
 ```text
@@ -20,27 +44,20 @@ https://github.com/danilger/patterns/blob/main/<путь-к-файлу>
 https://github.com/danilger/patterns/blob/main/frontend/react/compound-components/compound-components.md
 ```
 
-В `AGENTS.md` целевого проекта достаточно указать корень библиотеки:
-
-```text
-Паттерны: https://github.com/danilger/patterns
-Каталог — README.md; правила файлов — AGENTS.md в том же репо.
-Ссылку на объяснение конкретного паттерна оставляй в комментарии/PR.
-```
-
 ## Структура
 
 Каждый паттерн — папка `<slug>/` с парой `<slug>.js` + `<slug>.md`.
 
 ```text
 patterns/
-├── AGENTS.md                 # правила раскладки для агентов
+├── AGENTS.md                 # раскладка файлов ЭТОЙ библиотеки
 ├── README.md                 # этот индекс
+├── consume/                  # правило + skill для продуктовых репо
 ├── gof/
 │   ├── creational/<slug>/
 │   ├── structural/<slug>/
 │   ├── behavioral/<slug>/
-│   └── js-language-builtins/ # мета: GoF во встроенных конструкциях JS
+│   └── js-language-builtins/
 ├── frontend/
 │   ├── react/<slug>/
 │   ├── rendering/<slug>/
@@ -95,18 +112,25 @@ patterns/
 
 ## Frontend — React (`frontend/react/`)
 
+Паттерны **композиции UI и state API**. Рендеринг (CSR/SSR/…) — в [`frontend/rendering/`](#frontend--рендеринг-frontendrendering); загрузка и perf — в [`frontend/performance/`](#frontend--производительность-frontendperformance).
+
 | Паттерн | Файлы |
 |---------|-------|
 | Compound Components | [`.js`](frontend/react/compound-components/compound-components.js) · [`.md`](frontend/react/compound-components/compound-components.md) |
 | Container / Presentational | [`.js`](frontend/react/container-presentational/container-presentational.js) · [`.md`](frontend/react/container-presentational/container-presentational.md) |
+| Control Props | [`.js`](frontend/react/control-props/control-props.js) · [`.md`](frontend/react/control-props/control-props.md) |
 | Controlled / Uncontrolled Components | [`.js`](frontend/react/controlled-uncontrolled/controlled-uncontrolled.js) · [`.md`](frontend/react/controlled-uncontrolled/controlled-uncontrolled.md) |
 | Custom Hooks | [`.js`](frontend/react/custom-hooks/custom-hooks.js) · [`.md`](frontend/react/custom-hooks/custom-hooks.md) |
+| Error Boundary | [`.js`](frontend/react/error-boundary/error-boundary.js) · [`.md`](frontend/react/error-boundary/error-boundary.md) |
 | Higher-Order Component (HOC) | [`.js`](frontend/react/hoc/hoc.js) · [`.md`](frontend/react/hoc/hoc.md) |
 | Hooks | [`.js`](frontend/react/hooks/hooks.js) · [`.md`](frontend/react/hooks/hooks.md) |
 | Lifting State Up | [`.js`](frontend/react/lifting-state/lifting-state.js) · [`.md`](frontend/react/lifting-state/lifting-state.md) |
+| Portal | [`.js`](frontend/react/portal/portal.js) · [`.md`](frontend/react/portal/portal.md) |
+| Props Getters / Prop Collections | [`.js`](frontend/react/props-getters/props-getters.js) · [`.md`](frontend/react/props-getters/props-getters.md) |
 | Provider (Context) | [`.js`](frontend/react/provider/provider.js) · [`.md`](frontend/react/provider/provider.md) |
 | Render Props | [`.js`](frontend/react/render-props/render-props.js) · [`.md`](frontend/react/render-props/render-props.md) |
 | State Reducer | [`.js`](frontend/react/state-reducer/state-reducer.js) · [`.md`](frontend/react/state-reducer/state-reducer.md) |
+| Suspense Boundary | [`.js`](frontend/react/suspense/suspense.js) · [`.md`](frontend/react/suspense/suspense.md) |
 
 ## Frontend — рендеринг (`frontend/rendering/`)
 
