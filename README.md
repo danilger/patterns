@@ -31,7 +31,7 @@ https://github.com/danilger/patterns/blob/main/consume/annotation.md
 ### Как пользоваться каталогом
 
 1. Открой этот README и выбери область (GoF / Frontend / Backend).
-2. Перейди к папке паттерна (`.js` — демо; `.md` — объяснение).
+2. Перейди к папке паттерна (`.js` — демо; `.md` — объяснение). В GoF смотри `*-class.js` и `*-functional.js`.
 3. В коде и ревью оставляй ссылку на `.md`:
 
 ```text
@@ -46,7 +46,9 @@ https://github.com/danilger/patterns/blob/main/frontend/react/compound-component
 
 ## Структура
 
-Каждый паттерн — папка `<slug>/` с парой `<slug>.js` + `<slug>.md`.
+Каждый паттерн — папка `<slug>/` с объяснением `<slug>.md` и демо на JS.
+
+В **GoF** у каждого паттерна два демо: `<slug>-class.js` (ООП) и `<slug>-functional.js` (функции / замыкания).
 
 ```text
 patterns/
@@ -54,7 +56,7 @@ patterns/
 ├── README.md                 # этот индекс
 ├── consume/                  # правило + skill для продуктовых репо
 ├── gof/
-│   ├── creational/<slug>/
+│   ├── creational/<slug>/    # *-class.js + *-functional.js + .md
 │   ├── structural/<slug>/
 │   ├── behavioral/<slug>/
 │   └── js-language-builtins/
@@ -72,39 +74,39 @@ patterns/
 
 | Паттерн | Файлы |
 |---------|-------|
-| Abstract Factory (Абстрактная фабрика) | [`.js`](gof/creational/abstract-factory/abstract-factory.js) · [`.md`](gof/creational/abstract-factory/abstract-factory.md) |
-| Builder (Строитель) | [`.js`](gof/creational/builder/builder.js) · [`.md`](gof/creational/builder/builder.md) |
-| Factory Method (Фабричный метод) | [`.js`](gof/creational/factory-method/factory-method.js) · [`.md`](gof/creational/factory-method/factory-method.md) |
-| Prototype (Прототип) | [`.js`](gof/creational/prototype/prototype.js) · [`.md`](gof/creational/prototype/prototype.md) |
-| Singleton (Одиночка) | [`.js`](gof/creational/singleton/singleton.js) · [`.md`](gof/creational/singleton/singleton.md) |
+| Abstract Factory (Абстрактная фабрика) | [`class`](gof/creational/abstract-factory/abstract-factory-class.js) · [`functional`](gof/creational/abstract-factory/abstract-factory-functional.js) · [`.md`](gof/creational/abstract-factory/abstract-factory.md) |
+| Builder (Строитель) | [`class`](gof/creational/builder/builder-class.js) · [`functional`](gof/creational/builder/builder-functional.js) · [`.md`](gof/creational/builder/builder.md) |
+| Factory Method (Фабричный метод) | [`class`](gof/creational/factory-method/factory-method-class.js) · [`functional`](gof/creational/factory-method/factory-method-functional.js) · [`.md`](gof/creational/factory-method/factory-method.md) |
+| Prototype (Прототип) | [`class`](gof/creational/prototype/prototype-class.js) · [`functional`](gof/creational/prototype/prototype-functional.js) · [`.md`](gof/creational/prototype/prototype.md) |
+| Singleton (Одиночка) | [`class`](gof/creational/singleton/singleton-class.js) · [`functional`](gof/creational/singleton/singleton-functional.js) · [`.md`](gof/creational/singleton/singleton.md) |
 
 ## GoF — структурные (`gof/structural/`)
 
 | Паттерн | Файлы |
 |---------|-------|
-| Adapter (Адаптер) | [`.js`](gof/structural/adapter/adapter.js) · [`.md`](gof/structural/adapter/adapter.md) |
-| Bridge (Мост) | [`.js`](gof/structural/bridge/bridge.js) · [`.md`](gof/structural/bridge/bridge.md) |
-| Composite (Компоновщик) | [`.js`](gof/structural/composite/composite.js) · [`.md`](gof/structural/composite/composite.md) |
-| Decorator (Декоратор) | [`.js`](gof/structural/decorator/decorator.js) · [`.md`](gof/structural/decorator/decorator.md) |
-| Facade (Фасад) | [`.js`](gof/structural/facade/facade.js) · [`.md`](gof/structural/facade/facade.md) |
-| Flyweight (Приспособленец) | [`.js`](gof/structural/flyweight/flyweight.js) · [`.md`](gof/structural/flyweight/flyweight.md) |
-| Proxy (Заместитель) | [`.js`](gof/structural/proxy/proxy.js) · [`.md`](gof/structural/proxy/proxy.md) |
+| Adapter (Адаптер) | [`class`](gof/structural/adapter/adapter-class.js) · [`functional`](gof/structural/adapter/adapter-functional.js) · [`.md`](gof/structural/adapter/adapter.md) |
+| Bridge (Мост) | [`class`](gof/structural/bridge/bridge-class.js) · [`functional`](gof/structural/bridge/bridge-functional.js) · [`.md`](gof/structural/bridge/bridge.md) |
+| Composite (Компоновщик) | [`class`](gof/structural/composite/composite-class.js) · [`functional`](gof/structural/composite/composite-functional.js) · [`.md`](gof/structural/composite/composite.md) |
+| Decorator (Декоратор) | [`class`](gof/structural/decorator/decorator-class.js) · [`functional`](gof/structural/decorator/decorator-functional.js) · [`.md`](gof/structural/decorator/decorator.md) |
+| Facade (Фасад) | [`class`](gof/structural/facade/facade-class.js) · [`functional`](gof/structural/facade/facade-functional.js) · [`.md`](gof/structural/facade/facade.md) |
+| Flyweight (Приспособленец) | [`class`](gof/structural/flyweight/flyweight-class.js) · [`functional`](gof/structural/flyweight/flyweight-functional.js) · [`.md`](gof/structural/flyweight/flyweight.md) |
+| Proxy (Заместитель) | [`class`](gof/structural/proxy/proxy-class.js) · [`functional`](gof/structural/proxy/proxy-functional.js) · [`.md`](gof/structural/proxy/proxy.md) |
 
 ## GoF — поведенческие (`gof/behavioral/`)
 
 | Паттерн | Файлы |
 |---------|-------|
-| Chain of Responsibility (Цепочка обязанностей) | [`.js`](gof/behavioral/chain-of-responsibility/chain-of-responsibility.js) · [`.md`](gof/behavioral/chain-of-responsibility/chain-of-responsibility.md) |
-| Command (Команда) | [`.js`](gof/behavioral/command/command.js) · [`.md`](gof/behavioral/command/command.md) |
-| Interpreter (Интерпретатор) | [`.js`](gof/behavioral/interpreter/interpreter.js) · [`.md`](gof/behavioral/interpreter/interpreter.md) |
-| Iterator (Итератор) | [`.js`](gof/behavioral/iterator/iterator.js) · [`.md`](gof/behavioral/iterator/iterator.md) |
-| Mediator (Посредник) | [`.js`](gof/behavioral/mediator/mediator.js) · [`.md`](gof/behavioral/mediator/mediator.md) |
-| Memento (Хранитель) | [`.js`](gof/behavioral/memento/memento.js) · [`.md`](gof/behavioral/memento/memento.md) |
-| Observer (Наблюдатель) | [`.js`](gof/behavioral/observer/observer.js) · [`.md`](gof/behavioral/observer/observer.md) |
-| State (Состояние) | [`.js`](gof/behavioral/state/state.js) · [`.md`](gof/behavioral/state/state.md) |
-| Strategy (Стратегия) | [`.js`](gof/behavioral/strategy/strategy.js) · [`.md`](gof/behavioral/strategy/strategy.md) |
-| Template Method (Шаблонный метод) | [`.js`](gof/behavioral/template-method/template-method.js) · [`.md`](gof/behavioral/template-method/template-method.md) |
-| Visitor (Посетитель) | [`.js`](gof/behavioral/visitor/visitor.js) · [`.md`](gof/behavioral/visitor/visitor.md) |
+| Chain of Responsibility (Цепочка обязанностей) | [`class`](gof/behavioral/chain-of-responsibility/chain-of-responsibility-class.js) · [`functional`](gof/behavioral/chain-of-responsibility/chain-of-responsibility-functional.js) · [`.md`](gof/behavioral/chain-of-responsibility/chain-of-responsibility.md) |
+| Command (Команда) | [`class`](gof/behavioral/command/command-class.js) · [`functional`](gof/behavioral/command/command-functional.js) · [`.md`](gof/behavioral/command/command.md) |
+| Interpreter (Интерпретатор) | [`class`](gof/behavioral/interpreter/interpreter-class.js) · [`functional`](gof/behavioral/interpreter/interpreter-functional.js) · [`.md`](gof/behavioral/interpreter/interpreter.md) |
+| Iterator (Итератор) | [`class`](gof/behavioral/iterator/iterator-class.js) · [`functional`](gof/behavioral/iterator/iterator-functional.js) · [`.md`](gof/behavioral/iterator/iterator.md) |
+| Mediator (Посредник) | [`class`](gof/behavioral/mediator/mediator-class.js) · [`functional`](gof/behavioral/mediator/mediator-functional.js) · [`.md`](gof/behavioral/mediator/mediator.md) |
+| Memento (Хранитель) | [`class`](gof/behavioral/memento/memento-class.js) · [`functional`](gof/behavioral/memento/memento-functional.js) · [`.md`](gof/behavioral/memento/memento.md) |
+| Observer (Наблюдатель) | [`class`](gof/behavioral/observer/observer-class.js) · [`functional`](gof/behavioral/observer/observer-functional.js) · [`.md`](gof/behavioral/observer/observer.md) |
+| State (Состояние) | [`class`](gof/behavioral/state/state-class.js) · [`functional`](gof/behavioral/state/state-functional.js) · [`.md`](gof/behavioral/state/state.md) |
+| Strategy (Стратегия) | [`class`](gof/behavioral/strategy/strategy-class.js) · [`functional`](gof/behavioral/strategy/strategy-functional.js) · [`.md`](gof/behavioral/strategy/strategy.md) |
+| Template Method (Шаблонный метод) | [`class`](gof/behavioral/template-method/template-method-class.js) · [`functional`](gof/behavioral/template-method/template-method-functional.js) · [`.md`](gof/behavioral/template-method/template-method.md) |
+| Visitor (Посетитель) | [`class`](gof/behavioral/visitor/visitor-class.js) · [`functional`](gof/behavioral/visitor/visitor-functional.js) · [`.md`](gof/behavioral/visitor/visitor.md) |
 
 Дополнительно: [`js-language-builtins`](gof/js-language-builtins/js-language-builtins.md) — как идеи GoF проявляются во встроенных конструкциях JS.
 
@@ -179,7 +181,9 @@ patterns/
 
 Полные правила — в [AGENTS.md](./AGENTS.md). Кратко:
 
-- Один паттерн = одна папка `<slug>/` с `<slug>.js` + `<slug>.md`.
-- В шапке `.js`: `@pattern`, `@area` / `@category`, `@description`, `@when`.
+- Один паттерн = одна папка `<slug>/` с `<slug>.md` и демо на JS.
+- GoF: `<slug>-class.js` + `<slug>-functional.js` (две парадигмы, один сценарий).
+- Остальные области: обычно `<slug>.js` + `<slug>.md`.
+- В шапке `.js`: `@pattern`, `@area` / `@category`, `@variant` (для GoF), `@description`, `@when`.
 - Для ссылок из кода используй `.md`.
 - Демо в `.js` — минимальное; смысл паттерна — в `.md`.

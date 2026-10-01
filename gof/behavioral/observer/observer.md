@@ -19,7 +19,7 @@ Subject.setState() → notify() → Observer₁.update()
 
 ## Как устроено демо
 
-В `observer.js` — **метеостанция** и дисплеи:
+В `observer-class.js` / `observer-functional.js` — **метеостанция** и дисплеи:
 
 | Класс | Роль |
 |-------|------|
@@ -61,6 +61,18 @@ Push-модель: Subject сам рассылает уведомление пр
 | **Pub-Sub / Event Bus** | Часто с брокером между publisher и subscriber |
 | **Reactive (RxJS, signals)** | Observer + композиция потоков и операторов |
 | **MVC** | Model уведомляет View через observer-механизм |
+
+
+---
+
+## Варианты демо
+
+| Файл | Парадигма |
+|------|-----------|
+| `observer-class.js` | Классы / ООП (классическая GoF-форма) |
+| `observer-functional.js` | Функции, замыкания, plain objects |
+
+Оба файла показывают **одну и ту же идею** на одном сценарии — сравнивай рядом.
 
 ---
 

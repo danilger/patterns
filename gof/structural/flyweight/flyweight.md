@@ -14,7 +14,7 @@
 
 ## Как устроено демо
 
-В `flyweight.js`:
+В `flyweight-class.js` / `flyweight-functional.js`:
 
 1. **`TreeType` (Flyweight)** — intrinsic: `name`, `color`, `texture`; метод `draw(canvas, x, y)` получает extrinsic координаты.
 2. **`TreeFactory`** — кэш `Map` по ключу `name_color_texture`; создаёт тип один раз.
@@ -45,6 +45,18 @@
 - **Singleton / Factory** — `TreeFactory` + кэш как **пул** shared flyweight.
 - **Composite** — дерево часто содержит **массовые листья**, где Flyweight экономит память.
 - **Object Pool** — переиспользует **объекты целиком**; Flyweight — **общие части** состояния.
+
+
+---
+
+## Варианты демо
+
+| Файл | Парадигма |
+|------|-----------|
+| `flyweight-class.js` | Классы / ООП (классическая GoF-форма) |
+| `flyweight-functional.js` | Функции, замыкания, plain objects |
+
+Оба файла показывают **одну и ту же идею** на одном сценарии — сравнивай рядом.
 
 ---
 

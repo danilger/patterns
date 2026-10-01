@@ -22,7 +22,7 @@ TemplateMethod() {
 
 ## Как устроено демо
 
-В `template-method.js` — **извлечение данных из файлов**:
+В `template-method-class.js` / `template-method-functional.js` — **извлечение данных из файлов**:
 
 | Элемент | Где |
 |---------|-----|
@@ -58,6 +58,18 @@ TemplateMethod() {
 | **Factory Method** | Создание объекта; Template Method — *последовательность операций* |
 | **Hook method** | Частный случай optional step в Template Method |
 | **Pipeline / Middleware** | Композиционный аналог фиксированного порядка шагов |
+
+
+---
+
+## Варианты демо
+
+| Файл | Парадигма |
+|------|-----------|
+| `template-method-class.js` | Классы / ООП (классическая GoF-форма) |
+| `template-method-functional.js` | Функции, замыкания, plain objects |
+
+Оба файла показывают **одну и ту же идею** на одном сценарии — сравнивай рядом.
 
 ---
 

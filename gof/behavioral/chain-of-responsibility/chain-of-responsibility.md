@@ -20,7 +20,7 @@ Client → Handler₁ → Handler₂ → … → Handlerₙ → результа
 
 ## Как устроено демо
 
-В `chain-of-responsibility.js` — цепочка HTTP-подобных проверок для входящего запроса:
+В `chain-of-responsibility-class.js` / `chain-of-responsibility-functional.js` — цепочка HTTP-подобных проверок для входящего запроса:
 
 | Класс | Роль |
 |-------|------|
@@ -61,6 +61,18 @@ auth.setNext(new RoleHandler())
 | **Composite** | Дерево «часть–целое» с единым интерфейс; цепочка — линейный pipeline |
 | **Command** | Инкапсулирует *действие*; цепочка — *маршрутизация* запроса |
 | **Interceptor / Middleware** | Практическая форма Chain of Responsibility в веб-фреймворках |
+
+
+---
+
+## Варианты демо
+
+| Файл | Парадигма |
+|------|-----------|
+| `chain-of-responsibility-class.js` | Классы / ООП (классическая GoF-форма) |
+| `chain-of-responsibility-functional.js` | Функции, замыкания, plain objects |
+
+Оба файла показывают **одну и ту же идею** на одном сценарии — сравнивай рядом.
 
 ---
 

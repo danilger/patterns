@@ -20,7 +20,7 @@ element.accept(visitor) → visitor.visitXxx(element)
 
 ## Как устроено демо
 
-В `visitor.js` — **геометрические фигуры**:
+В `visitor-class.js` / `visitor-functional.js` — **геометрические фигуры**:
 
 | Роль | Класс |
 |------|-------|
@@ -62,6 +62,18 @@ shape.accept(xml)   // `<circle … />` или `<rectangle … />`
 | **Strategy** | Одна операция на выбор; Visitor — *набор* типоспецифичных visit-методов |
 | **Composite** | Дерево элементов; Visitor часто обходит Composite |
 | **Open/Closed** | Visitor — классический trade-off: открыт для операций, закрыт для новых типов |
+
+
+---
+
+## Варианты демо
+
+| Файл | Парадигма |
+|------|-----------|
+| `visitor-class.js` | Классы / ООП (классическая GoF-форма) |
+| `visitor-functional.js` | Функции, замыкания, plain objects |
+
+Оба файла показывают **одну и ту же идею** на одном сценарии — сравнивай рядом.
 
 ---
 

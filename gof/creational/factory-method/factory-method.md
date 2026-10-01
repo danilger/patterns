@@ -14,7 +14,7 @@
 
 ## Как устроено демо
 
-В `factory-method.js`:
+В `factory-method-class.js` / `factory-method-functional.js`:
 
 1. **`Transport`** — продукт с методом `deliver()`; реализации `Truck` и `Ship`.
 2. **`Logistics`** — создатель (Creator): шаблонный метод `planDelivery()` вызывает фабричный `createTransport()` и затем `deliver()`.
@@ -44,6 +44,18 @@
 - **Abstract Factory** — фабрика **семейств** продуктов; Factory Method — один продукт на создателя.
 - **Template Method** — общий алгоритм с переопределяемыми шагами; Factory Method часто *является* одним из таких шагов.
 - **Simple Factory** — одна функция выбирает тип; Factory Method распределяет выбор по **подклассам**.
+
+
+---
+
+## Варианты демо
+
+| Файл | Парадигма |
+|------|-----------|
+| `factory-method-class.js` | Классы / ООП (классическая GoF-форма) |
+| `factory-method-functional.js` | Функции, замыкания, plain objects |
+
+Оба файла показывают **одну и ту же идею** на одном сценарии — сравнивай рядом.
 
 ---
 

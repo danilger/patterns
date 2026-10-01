@@ -14,7 +14,7 @@
 
 ## Как устроено демо
 
-В `abstract-factory.js`:
+В `abstract-factory-class.js` / `abstract-factory-functional.js`:
 
 1. **Продукты** — `WinButton`, `MacButton`, `WinCheckbox`, `MacCheckbox`; у каждого `paint()`.
 2. **`GUIFactory`** — абстрактная фабрика с `createButton()` и `createCheckbox()`.
@@ -45,6 +45,18 @@
 - **Factory Method** — создаёт **один** тип продукта; Abstract Factory — **несколько связанных**.
 - **Builder** — пошаговая сборка **одного** сложного объекта; Abstract Factory — набор **отдельных** продуктов.
 - **Dependency Injection** — часто подставляет «фабрику» или провайдеры вместо явной иерархии GoF.
+
+
+---
+
+## Варианты демо
+
+| Файл | Парадигма |
+|------|-----------|
+| `abstract-factory-class.js` | Классы / ООП (классическая GoF-форма) |
+| `abstract-factory-functional.js` | Функции, замыкания, plain objects |
+
+Оба файла показывают **одну и ту же идею** на одном сценарии — сравнивай рядом.
 
 ---
 
