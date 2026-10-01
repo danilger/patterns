@@ -14,7 +14,16 @@
 - Правило: https://github.com/danilger/patterns/blob/main/consume/AGENTS.snippet.md
 - Skill: https://github.com/danilger/patterns/blob/main/consume/skills/compose-from-patterns/SKILL.md
 - Аннотации: https://github.com/danilger/patterns/blob/main/consume/annotation.md
-- Каталог паттернов: https://github.com/danilger/patterns
+- Каталог (индекс имён): https://github.com/danilger/patterns/blob/main/README.md
+
+## Разделение ролей
+
+| Аудитория | Что берёт из библиотеки |
+|-----------|-------------------------|
+| **Агент** | Только список паттернов из README + URL на `.md` для `@see` в плане и коде |
+| **Человек** | `.md` объяснения и `.js` демо — чтобы быстро понять размеченный код |
+
+Агент **не** ходит по демо и не учится по этой репе: паттерны ему уже известны. Цель consume — единый каталог имён и стабильные ссылки для аннотаций.
 
 ## Важно
 

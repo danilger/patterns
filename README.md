@@ -2,22 +2,27 @@
 
 Библиотека паттернов проектирования и прикладных приёмов, разложенных **по областям применения**.
 
-Репозиторий — ориентир для агентов и разработчиков: какие паттерны есть, где их уместно применять, и куда ссылаться из кода / `AGENTS.md`.
+Этот README — **каталог имён и ссылок**. Демо (`.js`) и подробные `.md` — в первую очередь для **людей** (быстро разобрать размеченный код). Агенты паттерны уже знают: им нужен список + URL на `.md` для аннотаций.
 
 ## Для агентов
 
+### Что делать / чего не делать
+
+| Делать | Не делать |
+|--------|-----------|
+| Брать **имена** паттернов из таблиц ниже | Открывать / копировать демо (`*.js`, `*-class.js`, `*-functional.js`) |
+| В коде и плане ставить `@see` на **`.md`** | Учиться паттернам по этой репе |
+| Подключать пакет [consume/](./consume/) в продукт | Обходить дерево папок «на всякий случай» |
+
 ### Подключить в свой проект
 
-Пакет для продуктовых репо: **[consume/](./consume/)**  
-(GitHub: https://github.com/danilger/patterns/tree/main/consume)
+Пакет: **[consume/](./consume/)** · https://github.com/danilger/patterns/tree/main/consume
 
 | Что | Где забрать | Куда положить |
 |-----|-------------|---------------|
 | **Правило** | [consume/AGENTS.snippet.md](./consume/AGENTS.snippet.md) | Вставить в `AGENTS.md` продукта |
-| **Skill** (только планы) | [consume/skills/compose-from-patterns/](./consume/skills/compose-from-patterns/) | `.cursor/skills/compose-from-patterns/` или `~/.cursor/skills/compose-from-patterns/` |
+| **Skill** (только планы) | [consume/skills/compose-from-patterns/](./consume/skills/compose-from-patterns/) | `.cursor/skills/compose-from-patterns/` или `~/.cursor/skills/…` |
 | **Аннотации** | [consume/annotation.md](./consume/annotation.md) | Следовать при разметке кода / PR |
-
-Прямые ссылки:
 
 ```text
 https://github.com/danilger/patterns/blob/main/consume/AGENTS.snippet.md
@@ -25,20 +30,12 @@ https://github.com/danilger/patterns/blob/main/consume/skills/compose-from-patte
 https://github.com/danilger/patterns/blob/main/consume/annotation.md
 ```
 
-- Skill с `disable-model-invocation: true` — вызывать **только** в Plan mode / opsx-propose / opsx-explore / явно.
-- [AGENTS.md](./AGENTS.md) в корне этого репо — правила **сопровождения каталога**, не путать со snippet для продуктов.
+- Skill с `disable-model-invocation: true` — **только** Plan mode / opsx-propose / opsx-explore / явно.
+- [AGENTS.md](./AGENTS.md) в корне — правила **сопровождения каталога**, не путать со snippet для продуктов.
 
-### Как пользоваться каталогом
+### Ссылка для аннотации
 
-1. Открой этот README и выбери область (GoF / Frontend / Backend).
-2. Перейди к папке паттерна (`.js` — демо; `.md` — объяснение). В GoF смотри `*-class.js` и `*-functional.js`.
-3. В коде и ревью оставляй ссылку на `.md`:
-
-```text
-https://github.com/danilger/patterns/blob/main/<путь-к-файлу>
-```
-
-Пример:
+Из таблицы ниже бери путь к `.md` (не к `.js`):
 
 ```text
 https://github.com/danilger/patterns/blob/main/frontend/react/compound-components/compound-components.md
