@@ -12,6 +12,17 @@ NestJS поднимает **IoC-контейнер**: регистрирует p
 
 В «голом» JavaScript DI нет — демо показывает минимальный контейнер, чтобы понять, *зачем* Nest.
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  Container[(IoC Container)] -->|inject| Consumer
+  Container --> ProviderA
+  Container --> ProviderB
+  Consumer --> ProviderA
+```
+
 ## Как устроено демо
 
 Файл `dependency-injection.js`:

@@ -15,6 +15,16 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  Viewport -->|IntersectionObserver| Visible
+  Visible --> Import[dynamic import]
+  Import --> Widget
+```
+
 ## Как устроено демо
 
 `createImportOnVisibility(loader)` в `import-on-visibility.js`:

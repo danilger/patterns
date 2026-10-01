@@ -12,6 +12,19 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart TB
+  Client --> Facade["VideoPlayerFacade.play()"]
+  Facade --> A[AudioDecoder]
+  Facade --> V[VideoDecoder]
+  Facade --> S[Subtitles]
+  Facade --> Scr[Screen]
+  Facade --> Sp[Speakers]
+```
+
 ## Как устроено демо
 
 В `facade-class.js` / `facade-functional.js`:

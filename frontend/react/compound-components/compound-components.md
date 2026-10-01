@@ -39,6 +39,19 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart TB
+  Tabs -->|"owns state"| Ctx[(Context)]
+  Tabs --> List
+  Tabs --> Panel
+  List --> Tab
+  Tab --> Ctx
+  Panel --> Ctx
+```
+
 ## Что решает
 
 | Проблема | Как помогает Compound |

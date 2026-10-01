@@ -15,6 +15,17 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart TB
+  Page["Mostly static HTML"] --> I1["Island: interactive"]
+  Page --> Static[Static content]
+  Page --> I2["Island: interactive"]
+  hint["JS only for islands"]
+```
+
 ## Как устроено демо
 
 `renderPage({ staticHtml, islands })` в `islands-architecture.js`:

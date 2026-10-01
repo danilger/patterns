@@ -13,6 +13,16 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  GoF[GoF idea] --> Lang["JS/TS built-in / ecosystem"]
+  Lang --> M[modules / Proxy / iterators]
+  Lang --> Ev[EventTarget / DI / middleware]
+```
+
 ## Как устроено демо
 
 Файл `js-language-builtins.js` не содержит исполняемой логики классов — только **таблицу соответствий** в `console.log`:

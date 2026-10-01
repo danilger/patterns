@@ -12,6 +12,16 @@
 
 В NestJS это обычно custom provider с `useClass` / `useFactory` и injection token (`Symbol` или строка).
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  App --> Port["App interface"]
+  Adapter -.implements.-> Port
+  Adapter --> Stripe["External SDK"]
+```
+
 ## Как устроено демо
 
 Файл `adapter-external.js` моделирует hexagonal-границу без фреймворка:

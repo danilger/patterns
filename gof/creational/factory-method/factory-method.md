@@ -12,6 +12,17 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart TB
+  Creator["Creator.planDelivery()"] --> FM["createTransport() ← factory method"]
+  FM --> Truck
+  FM --> Ship
+  Creator --> use["uses product.deliver()"]
+```
+
 ## Как устроено демо
 
 В `factory-method-class.js` / `factory-method-functional.js`:

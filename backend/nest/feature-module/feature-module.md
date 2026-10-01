@@ -12,6 +12,18 @@ Nest-приложение собирается из **модулей** (`@Module
 
 Это **Module pattern** языка + явная архитектура вместо одной папки «всё в кучу».
 
+
+## Схема
+
+```mermaid
+flowchart TB
+  AppModule --> UsersModule
+  AppModule --> OrdersModule
+  UsersModule --> Controller
+  UsersModule --> Service
+  UsersModule --> Repo
+```
+
 ## Как устроено демо
 
 Файл `feature-module.js`:

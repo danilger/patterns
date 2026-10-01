@@ -13,6 +13,17 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart TB
+  Suspense -->|fallback| Spinner
+  Suspense --> Child
+  Child -.->|suspend / promise| Suspense
+  Suspense -->|resolved| Child
+```
+
 ## Как устроено демо
 
 В [`suspense.js`](./suspense.js):

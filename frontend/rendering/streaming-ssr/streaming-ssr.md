@@ -15,6 +15,19 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+sequenceDiagram
+  participant B as Browser
+  participant S as Server
+  S-->>B: HTML shell stream
+  S-->>B: Suspense slot A
+  S-->>B: Suspense slot B
+  note over B,S: Progressive HTML chunks
+```
+
 ## Как устроено демо
 
 Async generator **`streamSSR(sections)`** в `streaming-ssr.js`:

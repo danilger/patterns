@@ -13,6 +13,16 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  AppTree --> Comp
+  Comp -->|createPortal| Body["document.body overlay"]
+  hint["UI escapes DOM hierarchy"]
+```
+
 ## Как устроено демо
 
 В [`portal.js`](./portal.js):

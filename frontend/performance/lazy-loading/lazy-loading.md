@@ -15,6 +15,16 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  Need[Need resource] --> Load[Load on demand]
+  Load --> Cache[(cache)]
+  Idle[Not needed yet] -.-> Load
+```
+
 ## Как устроено демо
 
 `createLazyImage(src)` в `lazy-loading.js` — упрощённая модель lazy image:

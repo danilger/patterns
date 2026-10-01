@@ -15,6 +15,17 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart TB
+  Parent["Parent owns state"] --> ChildA
+  Parent --> ChildB
+  ChildA -->|callback| Parent
+  ChildB -->|reads props| Parent
+```
+
 ## Как устроено демо
 
 `createTemperatureApp()` в `lifting-state.js`:

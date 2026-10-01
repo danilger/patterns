@@ -17,6 +17,17 @@ Subject.setState() → notify() → Observer₁.update()
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart TB
+  Subject[WeatherStation] -->|notify| O1[PhoneDisplay]
+  Subject -->|notify| O2[TabletDisplay]
+  Subject -.->|attach / detach| O1
+  Subject -.->|attach / detach| O2
+```
+
 ## Как устроено демо
 
 В `observer-class.js` / `observer-functional.js` — **метеостанция** и дисплеи:

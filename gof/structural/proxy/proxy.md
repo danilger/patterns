@@ -12,6 +12,17 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  Client --> Proxy["ImageProxy"]
+  Proxy -->|"first display()"| Real[RealImage]
+  Proxy -->|"later calls"| Real
+  hint["Same interface; lazy / access control"]
+```
+
 ## Как устроено демо
 
 В `proxy-class.js` / `proxy-functional.js` — **Virtual Proxy**:

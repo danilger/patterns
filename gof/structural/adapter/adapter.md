@@ -12,6 +12,16 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  Client -->|expects play| Target
+  Adapter -.implements.-> Target
+  Adapter -->|translates| Adaptee["Legacy API"]
+```
+
 ## Как устроено демо
 
 В `adapter-class.js` / `adapter-functional.js` используется **Object Adapter** (композиция):

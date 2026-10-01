@@ -12,6 +12,17 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  Client --> SlackD[SlackDecorator]
+  SlackD --> SmsD[SmsDecorator]
+  SmsD --> Core[EmailNotifier]
+  hint["Same interface at every layer"]
+```
+
 ## Как устроено демо
 
 В `decorator-class.js` / `decorator-functional.js`:

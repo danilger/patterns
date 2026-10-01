@@ -12,6 +12,19 @@
 
 «Lite» в демо — упрощённая шина без event sourcing и проекций; достаточно показать разделение шин и регистрацию обработчиков.
 
+
+## Схема
+
+```mermaid
+flowchart TB
+  Client --> CommandBus
+  Client --> QueryBus
+  CommandBus --> CommandHandler
+  QueryBus --> QueryHandler
+  CommandHandler --> Write[(write model)]
+  QueryHandler --> Read[(read model)]
+```
+
 ## Как устроено демо
 
 Файл `cqrs-lite.js`:

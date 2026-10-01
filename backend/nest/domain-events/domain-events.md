@@ -12,6 +12,17 @@
 
 В Nest: `@nestjs/event-emitter` или события в `@nestjs/cqrs`.
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  Aggregate -->|emit| Event
+  Event --> Handler1
+  Event --> Handler2
+  hint["Observer for domain side-effects"]
+```
+
 ## Как устроено демо
 
 Файл `domain-events.js`:

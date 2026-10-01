@@ -12,6 +12,17 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  Director --> Builder
+  Builder -->|step by step| Product
+  Client --> Director
+  Client -->|or direct| Builder
+```
+
 ## Как устроено демо
 
 В `builder-class.js` / `builder-functional.js`:

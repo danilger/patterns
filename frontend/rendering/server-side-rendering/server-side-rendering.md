@@ -15,6 +15,19 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+sequenceDiagram
+  participant B as Browser
+  participant S as Server
+  B->>S: GET page
+  S->>S: fetch data + render HTML
+  S-->>B: full HTML
+  B->>B: hydrate JS
+```
+
 ## Как устроено демо
 
 `ssrRequest({ req, loadData, renderToString })` в `server-side-rendering.js`:

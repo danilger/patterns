@@ -10,6 +10,16 @@
 
 Guards выполняются **раньше** handler в Nest lifecycle. Возвращают `true` / `false` или бросают `ForbiddenException`. Несколько guards на route образуют цепочку — все должны пропустить.
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  Request --> Guard{"canActivate?"}
+  Guard -->|yes| Handler
+  Guard -->|no| Deny[401 / 403]
+```
+
 ## Как устроено демо
 
 Файл `guard.js`:

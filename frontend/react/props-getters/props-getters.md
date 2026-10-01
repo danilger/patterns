@@ -16,6 +16,17 @@ Reusable-хук отдаёт не «голый state», а **готовые prop
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  Hook["useToggle()"] --> getters["getTogglerProps()"]
+  getters --> Button
+  getters --> Custom["custom element"]
+  hint["Prop collections + safe merge"]
+```
+
 ## Как устроено демо
 
 В [`props-getters.js`](./props-getters.js):

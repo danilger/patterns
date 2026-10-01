@@ -12,6 +12,17 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart TB
+  Remote["Abstraction: Remote"] --> Device["Implementor: Device"]
+  AdvancedRemote --> Remote
+  Device --> TV
+  Device --> Radio
+```
+
 ## Как устроено демо
 
 В `bridge-class.js` / `bridge-functional.js`:

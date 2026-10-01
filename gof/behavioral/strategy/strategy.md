@@ -17,6 +17,17 @@ Context.setStrategy(new …)  // смена алгоритма
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  Context[Sorter] -->|delegates| S1[BubbleSort]
+  Context -->|setStrategy| S2[BuiltInSort]
+  Context -->|setStrategy| S3[ReverseSort]
+  Client --> Context
+```
+
 ## Как устроено демо
 
 В `strategy-class.js` / `strategy-functional.js` — **сортировка массива чисел**:

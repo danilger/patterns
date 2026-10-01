@@ -15,6 +15,17 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart TB
+  Provider["Context.Provider value"] --> A
+  Provider --> B
+  A --> Nested
+  Nested -->|useContext| Value
+```
+
 ## Как устроено демо
 
 `createProvider(initial)` — plain-JS модель:

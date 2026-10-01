@@ -10,6 +10,16 @@
 
 **Exception Filter** перехватывает thrown exceptions **после** handler (и других слоёв), маппит их в HTTP-ответ. Бизнес-код кидает `NotFoundException`, доменные ошибки или кастомные классы — filter решает, что отдать клиенту и что залогировать.
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  Handler -->|throw| Exception
+  Exception --> Filter["Exception Filter"]
+  Filter --> Response["HTTP error body"]
+```
+
 ## Как устроено демо
 
 Файл `exception-filter.js`:

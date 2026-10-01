@@ -15,6 +15,16 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  CompA --> Hook["useSomething()"]
+  CompB --> Hook
+  Hook --> Logic[(shared stateful logic)]
+```
+
 ## Как устроено демо
 
 Файл моделирует hooks на plain JS:

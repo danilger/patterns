@@ -21,6 +21,19 @@ Expression tree → interpret(context) → boolean / number / …
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart TB
+  Expr["Or"] --> And
+  Expr --> Not
+  And --> Va[Var a]
+  And --> Vb[Var b]
+  Not --> Vc[Var c]
+  Expr -->|interpret context| Result[boolean]
+```
+
 ## Как устроено демо
 
 В `interpreter-class.js` / `interpreter-functional.js` — **булева алгебра** с переменными:

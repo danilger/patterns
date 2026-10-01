@@ -15,6 +15,16 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  User --> CDN[(Cached page)]
+  CDN -.->|stale-while-revalidate| Rebuild[Background regenerate]
+  Rebuild --> CDN
+```
+
 ## Как устроено демо
 
 `createIsrCache({ revalidateSeconds })` в `incremental-static-regeneration.js`:

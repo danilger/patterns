@@ -18,6 +18,21 @@ Client → Handler₁ → Handler₂ → … → Handlerₙ → результа
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  Req[Request] --> H1[Auth]
+  H1 -->|pass| H2[Role]
+  H2 -->|pass| H3[Validation]
+  H3 -->|pass| H4[Business]
+  H1 -->|stop| R1[401]
+  H2 -->|stop| R2[403]
+  H3 -->|stop| R3[400]
+  H4 --> OK[200]
+```
+
 ## Как устроено демо
 
 В `chain-of-responsibility-class.js` / `chain-of-responsibility-functional.js` — цепочка HTTP-подобных проверок для входящего запроса:

@@ -19,6 +19,17 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  FunctionComponent --> useState
+  FunctionComponent --> useEffect
+  FunctionComponent --> useContext
+  hint["Hooks = stateful logic in functions"]
+```
+
 ## Как устроено демо
 
 React-пример в комментарии: `Counter` с `useState(0)` и `useEffect` на `document.title`.

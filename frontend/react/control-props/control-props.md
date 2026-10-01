@@ -20,6 +20,16 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  Parent -->|"value + onChange"| Comp[Component]
+  Comp -->|may keep internal default| State
+  Parent -.->|controls when props given| Comp
+```
+
 ## Как устроено демо
 
 В [`control-props.js`](./control-props.js) `createSwitch`:

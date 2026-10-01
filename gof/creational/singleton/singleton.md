@@ -12,6 +12,16 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  C1[getInstance] --> I[(Single instance)]
+  C2[getInstance] --> I
+  C3[new / factory] --> I
+```
+
 ## Как устроено демо
 
 В `singleton-class.js` / `singleton-functional.js` классовый вариант держит `Database` со статическим `_instance`; функциональный — замыкание-фабрику:

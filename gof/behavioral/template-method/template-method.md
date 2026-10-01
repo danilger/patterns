@@ -20,6 +20,18 @@ TemplateMethod() {
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart TB
+  TM["mine() template"] --> open
+  open --> extract["extractData() ← override"]
+  extract --> parse["parseData() ← override"]
+  parse --> analyze
+  analyze --> send["sendReport() ← hook"]
+```
+
 ## Как устроено демо
 
 В `template-method-class.js` / `template-method-functional.js` — **извлечение данных из файлов**:

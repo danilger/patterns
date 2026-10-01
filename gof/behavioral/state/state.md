@@ -16,6 +16,19 @@ Context.play() → currentState.play() → setState(new …State)
 
 ---
 
+
+## Схема
+
+```mermaid
+stateDiagram-v2
+  [*] --> Ready
+  Ready --> Playing: play
+  Playing --> Paused: pause
+  Paused --> Playing: play
+  Playing --> Ready: stop
+  Paused --> Ready: stop
+```
+
 ## Как устроено демо
 
 В `state-class.js` / `state-functional.js` — **аудиоплеер** с тремя состояниями:

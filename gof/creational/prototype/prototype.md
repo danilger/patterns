@@ -12,6 +12,17 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  Proto[Prototype instance] -->|clone| Copy1[Copy A]
+  Proto -->|clone| Copy2[Copy B]
+  Copy1 -.->|independent| Proto
+  Copy2 -.->|independent| Proto
+```
+
 ## Как устроено демо
 
 В `prototype-class.js` / `prototype-functional.js`:

@@ -10,6 +10,17 @@
 
 **AuthGuard** (например `AuthGuard('jwt')`) выбирает стратегию по имени. Контекст (`AuthContext` в демо) делегирует `authenticate(credentials)` текущей strategy. Добавить OAuth — новый strategy class, без переписывания guard pipeline.
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  AuthGuard --> Passport
+  Passport --> LocalStrategy
+  Passport --> JwtStrategy
+  Passport --> OAuthStrategy
+```
+
 ## Как устроено демо
 
 Файл `strategy-auth.js`:

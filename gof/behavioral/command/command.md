@@ -23,6 +23,17 @@ Invoker → Command.execute() → Receiver
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  Invoker[Remote] -->|press| Cmd[Command]
+  Cmd -->|execute / undo| Receiver[Light]
+  Invoker --> Hist[(History stack)]
+  Hist -.->|undo| Cmd
+```
+
 ## Как устроено демо
 
 В `command-class.js` / `command-functional.js` — классический пример «умного пульта» и лампы:

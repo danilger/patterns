@@ -12,6 +12,18 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  Forest --> Tree1["Tree x,y + type ref"]
+  Forest --> Tree2["Tree x,y + type ref"]
+  Tree1 --> Shared["Flyweight: TreeType"]
+  Tree2 --> Shared
+  Factory[(TreeFactory cache)] --> Shared
+```
+
 ## Как устроено демо
 
 В `flyweight-class.js` / `flyweight-functional.js`:

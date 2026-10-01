@@ -10,6 +10,16 @@
 
 `ConfigModule` из `@nestjs/config` загружает `.env`, маппит переменные в объект конфигурации и (рекомендуется) валидирует схему через Joi или Zod. Ошибка «забыли JWT_SECRET» обнаруживается до первого запроса, а не в production под нагрузкой.
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  Env[(.env / secrets)] --> ConfigModule
+  ConfigModule --> ServiceA
+  ConfigModule --> ServiceB
+```
+
 ## Как устроено демо
 
 Файл `config-module.js` имитирует load + validate без Nest:

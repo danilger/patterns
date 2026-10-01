@@ -15,6 +15,18 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+sequenceDiagram
+  participant B as Browser
+  participant S as Server
+  B->>S: GET empty shell + JS
+  S-->>B: HTML + bundle
+  B->>B: fetch data + render UI
+```
+
 ## Как устроено демо
 
 `csrApp({ fetchData, render })` в `client-side-rendering.js`:

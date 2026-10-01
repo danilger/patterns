@@ -12,6 +12,21 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart TB
+  Client --> Factory["Abstract Factory"]
+  Factory --> WinF[WinFactory]
+  Factory --> MacF[MacFactory]
+  WinF --> WinBtn[WinButton]
+  WinF --> WinCb[WinCheckbox]
+  MacF --> MacBtn[MacButton]
+  MacF --> MacCb[MacCheckbox]
+  hint["One factory → consistent product family"]
+```
+
 ## Как устроено демо
 
 В `abstract-factory-class.js` / `abstract-factory-functional.js`:

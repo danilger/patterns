@@ -18,6 +18,19 @@ element.accept(visitor) → visitor.visitXxx(element)
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  Shape --> accept
+  accept --> Visitor
+  Visitor -->|visitCircle| Circle
+  Visitor -->|visitRectangle| Rect
+  V2[AreaVisitor] -.-> Visitor
+  V3[XmlVisitor] -.-> Visitor
+```
+
 ## Как устроено демо
 
 В `visitor-class.js` / `visitor-functional.js` — **геометрические фигуры**:

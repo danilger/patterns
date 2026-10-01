@@ -12,6 +12,17 @@ Controller не содержит `if (total <= 0)`, не ходит в БД, н�
 
 «Facade» здесь — **application facade / use-case layer**, не GoF Facade над legacy subsystem. Service фасадит repo + mailer + bus для одного сценария.
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  HTTP --> Controller["Thin Controller"]
+  Controller --> AppService["Application Service / Facade"]
+  AppService --> Domain
+  AppService --> Repo
+```
+
 ## Как устроено демо
 
 Файл `thin-controller.js`:

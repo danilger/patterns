@@ -15,6 +15,15 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  Idle[No heavy module] -->|click / focus| Import[dynamic import]
+  Import --> Feature[Load feature]
+```
+
 ## Как устроено демо
 
 `createImportOnInteraction(loader)` в `import-on-interaction.js`:

@@ -12,6 +12,17 @@ Controller не должен видеть QueryBuilder. Service не долже�
 
 В Nest часто `@Injectable()` класс-обёртка над `@InjectRepository(Entity)` или PrismaService.
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  Controller --> Service
+  Service --> Repository
+  Repository --> DB[(Database / Map)]
+  hint["Service = rules; Repo = persistence"]
+```
+
 ## Как устроено демо
 
 Файл `repository.js`:

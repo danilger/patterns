@@ -12,6 +12,17 @@
 
 Pipe в Nest — звено **Chain of Responsibility** в HTTP pipeline (после guards, до handler).
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  Request --> Pipe["ValidationPipe"]
+  Pipe --> DTO[DTO class]
+  DTO -->|ok| Controller
+  Pipe -->|400| Error
+```
+
 ## Как устроено демо
 
 Файл `dto-validation.js`:

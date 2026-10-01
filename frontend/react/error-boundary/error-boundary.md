@@ -15,6 +15,18 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart TB
+  Tree --> EB[Error Boundary]
+  EB --> ChildA
+  EB --> ChildB
+  ChildB -.->|throw| EB
+  EB -->|fallback UI| UI[Error UI]
+```
+
 ## Как устроено демо
 
 В [`error-boundary.js`](./error-boundary.js) упрощённый boundary:

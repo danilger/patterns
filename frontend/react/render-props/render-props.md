@@ -15,6 +15,15 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  DataComp["Component with data"] -->|"render={fn} / children"| Fn["(state) => UI"]
+  Fn --> UI
+```
+
 ## Как устроено демо
 
 Два примера в `render-props.js`:

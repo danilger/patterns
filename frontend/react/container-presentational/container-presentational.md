@@ -18,6 +18,15 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  Container["Container: data + effects"] --> Presentational["Presentational: UI only"]
+  Presentational -->|props / callbacks| User
+```
+
 ## Как устроено демо
 
 Файл `container-presentational.js` без React:

@@ -13,6 +13,17 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  UserAction --> InternalReducer
+  InternalReducer --> StateReducer["stateReducer override"]
+  StateReducer --> NextState
+  hint["Consumer can change transition rules"]
+```
+
 ## Как устроено демо
 
 `state-reducer.js`:

@@ -12,6 +12,18 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart TB
+  Folder["Composite: Folder"] --> F1[File]
+  Folder --> Sub["Folder"]
+  Sub --> F2[File]
+  Sub --> F3[File]
+  Client -->|"getSize / print same API"| Folder
+```
+
 ## Как устроено демо
 
 В `composite-class.js` / `composite-functional.js`:

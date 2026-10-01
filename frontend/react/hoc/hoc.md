@@ -15,6 +15,16 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  withX["HOC withX"] --> Wrapped[WrappedComponent]
+  withX --> Enhanced[Enhanced Component]
+  Client --> Enhanced
+```
+
 ## Как устроено демо
 
 Plain-JS HOC-цепочка в `hoc.js`:

@@ -17,6 +17,16 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  Coll[Collection] -->|createIterator| It[Iterator]
+  It -->|hasNext / next| Client
+  Coll -.->|hides| Internal[(internal storage)]
+```
+
 ## Как устроено демо
 
 В `iterator-class.js` / `iterator-functional.js`:

@@ -15,6 +15,16 @@ Scroll container имеет полную **virtual height**; строки — а
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart TB
+  LongList["10k items"] --> Window["Visible window only"]
+  Window --> DOM["~20 DOM nodes"]
+  Scroll --> Window
+```
+
 ## Как устроено демо
 
 **`virtualSlice({ length, scrollTop, rowHeight, viewportHeight, overscan })`** в `list-virtualization.js`:

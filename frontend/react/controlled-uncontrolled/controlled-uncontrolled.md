@@ -15,6 +15,19 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart TB
+  subgraph Controlled
+    P1[Parent state] <--> C1[Input value/onChange]
+  end
+  subgraph Uncontrolled
+    C2[Input defaultValue + ref] --> DOM
+  end
+```
+
 ## Как устроено демо
 
 Plain-JS аналог в `controlled-uncontrolled.js`:

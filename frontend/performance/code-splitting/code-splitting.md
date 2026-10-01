@@ -15,6 +15,16 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  Entry --> ChunkA[Route A chunk]
+  Entry --> ChunkB[Route B chunk]
+  Entry -.->|dynamic import| Lazy[Lazy component]
+```
+
 ## Как устроено демо
 
 `route(path)` в `code-splitting.js`:

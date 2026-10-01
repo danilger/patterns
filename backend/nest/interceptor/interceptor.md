@@ -12,6 +12,18 @@
 
 По духу — **Decorator** / **AOP** вокруг handler; в Nest interceptors работают и с HTTP, GraphQL, WebSockets, microservices.
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  Request --> Interceptor
+  Interceptor -->|before / after| Handler
+  Handler --> Interceptor
+  Interceptor --> Response
+  hint["AOP: logging, map, cache"]
+```
+
 ## Как устроено демо
 
 Файл `interceptor.js`:

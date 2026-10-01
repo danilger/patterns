@@ -15,6 +15,16 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  Build["Build time"] -->|pre-render| HTML[(Static HTML)]
+  CDN --> HTML
+  User --> CDN
+```
+
 ## Как устроено демо
 
 Два шага в `static-rendering.js`:

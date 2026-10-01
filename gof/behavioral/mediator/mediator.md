@@ -17,6 +17,17 @@
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart TB
+  Alice <--> Mediator
+  Bob <--> Mediator
+  Carol <--> Mediator
+  hint["Colleagues don't talk directly"]
+```
+
 ## Как устроено демо
 
 В `mediator-class.js` / `mediator-functional.js` — **чат-комната**:

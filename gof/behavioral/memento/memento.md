@@ -21,6 +21,16 @@ Originator.restore(memento) ← Caretaker.pop()
 
 ---
 
+
+## Схема
+
+```mermaid
+flowchart LR
+  Originator[Editor] -->|save| M[Memento snapshot]
+  Originator -->|restore| M
+  Caretaker[History] --> M
+```
+
 ## Как устроено демо
 
 В `memento-class.js` / `memento-functional.js` — **текстовый редактор**:
