@@ -1,35 +1,35 @@
-<!-- Вставь этот блок в AGENTS.md продуктового репозитория -->
+<!-- Paste this block into the product repository AGENTS.md -->
 
-## Паттерны (danilger/patterns)
+## Patterns (danilger/patterns)
 
-Каталог-индекс: https://github.com/danilger/patterns/blob/main/README.md  
-Пакет для агентов: https://github.com/danilger/patterns/tree/main/consume  
-Аннотации: https://github.com/danilger/patterns/blob/main/consume/annotation.md
+Catalog index: https://github.com/danilger/patterns/blob/main/README.md  
+Agent pack: https://github.com/danilger/patterns/tree/main/consume  
+Annotations: https://github.com/danilger/patterns/blob/main/consume/annotation.md
 
-### Зачем каталог агенту
+### Why the catalog exists for agents
 
-Репозиторий [danilger/patterns](https://github.com/danilger/patterns) — **справочник для людей**. Демо (`.js`) и тексты объяснений (`.md`) нужны человеку, чтобы быстро разобрать код на ревью.
+The [danilger/patterns](https://github.com/danilger/patterns) repo is a **human reference**. Demos (`.js`) and explanation texts (`.md`) help a person review annotated code quickly.
 
-Агент паттерны **уже знает**. Из каталога нужно только:
+The agent **already knows** the patterns. From the catalog it only needs:
 
-1. **Список имён** (что есть в библиотеке) — из [README](https://github.com/danilger/patterns/blob/main/README.md).
-2. **URL на `.md`** — чтобы в коде / PR поставить `@see` на описание для человека.
+1. **Name list** (what exists) — from the [README](https://github.com/danilger/patterns/blob/main/README.md).
+2. **`.md` URLs** — so code / PRs can put `@see` pointing at the human-facing description.
 
-Не клонируй библиотеку, не открывай `*-class.js` / `*-functional.js` / прочие демо, не изучай паттерны «заново» по этой репе.
+Do not clone the library, do not open `*-class.js` / `*-functional.js` / other demos, and do not relearn patterns from this repo.
 
-### Планирование
+### Planning
 
-Перед созданием или пересмотром **плана действий** (Cursor Plan mode, opsx-propose, opsx-explore, `/patterns-plan`) обязательно прочитай и следуй skill:
+Before creating or revising an **action plan** (Cursor Plan mode, opsx-propose, opsx-explore, `/patterns-plan`), read and follow the skill:
 
-- локально: `.cursor/skills/compose-from-patterns/SKILL.md` (или `~/.cursor/skills/compose-from-patterns/SKILL.md`)
-- иначе: https://github.com/danilger/patterns/blob/main/consume/skills/compose-from-patterns/SKILL.md
+- locally: `.cursor/skills/compose-from-patterns/SKILL.md` (or `~/.cursor/skills/compose-from-patterns/SKILL.md`)
+- otherwise: https://github.com/danilger/patterns/blob/main/consume/skills/compose-from-patterns/SKILL.md
 
-Skill **не** использовать для обычного кодинга, багфиксов и Q&A.
+Do **not** use the skill for ordinary coding, bugfixes, or Q&A.
 
-### Реализация
+### Implementation
 
-- Выполняй шаги согласованного плана; границы модулей — по указанным паттернам.
-- В коде и PR помечай блоки по [annotation.md](https://github.com/danilger/patterns/blob/main/consume/annotation.md): `@pattern` + `@see` на `.md`, либо `@ad-hoc` + `@why`.
-- Ссылка `@see` — для **читателя кода**, не для самообучения агента.
-- Не выбирай новые паттерны в обход плана: сначала обнови план, потом код.
-- Не строй абстракции «ради ссылки на каталог»; тривиальный glue можно без паттерна и без метки.
+- Follow the agreed plan steps; module boundaries follow the named patterns.
+- In code and PRs, mark blocks per [annotation.md](https://github.com/danilger/patterns/blob/main/consume/annotation.md): `@pattern` + `@see` on `.md`, or `@ad-hoc` + `@why`.
+- The `@see` link is for the **code reader**, not for the agent to relearn.
+- Don't pick new patterns outside the plan: update the plan first, then the code.
+- Don't invent abstractions “just for a catalog link”; trivial glue needs neither a pattern nor a mark.

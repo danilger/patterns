@@ -11,66 +11,66 @@ disable-model-invocation: true
 
 # Compose from patterns
 
-Собери **план реализации**, размеченный именами из каталога [danilger/patterns](https://github.com/danilger/patterns) и ссылками на `.md` для людей. Код в этом skill не пиши.
+Draft an **implementation plan** tagged with names from [danilger/patterns](https://github.com/danilger/patterns) and `.md` links for humans. Do not write product code in this skill.
 
-## Роль каталога
+## Catalog role
 
-Паттерны тебе уже знакомы. Репозиторий — не учебник и не источник демо для копирования.
+You already know the patterns. This repo is not a textbook and not a source of demos to copy.
 
-| Нужно агенту | Не нужно агенту |
-|--------------|-----------------|
-| [README](https://github.com/danilger/patterns/blob/main/README.md) — список имён и путей | Файлы `*.js` / `*-class.js` / `*-functional.js` (демо для людей) |
-| URL вида `…/<slug>/<slug>.md` для `@see` в плане и коде | Читать `.md` «чтобы вспомнить паттерн» |
-| [annotation.md](https://github.com/danilger/patterns/blob/main/consume/annotation.md) — формат меток | Клонировать или обходить дерево `gof/`, `frontend/`, `backend/` |
+| Agent needs | Agent does not need |
+|-------------|---------------------|
+| [README](https://github.com/danilger/patterns/blob/main/README.md) — name and path list | `*.js` / `*-class.js` / `*-functional.js` (human demos) |
+| URLs like `…/<slug>/<slug>.md` for `@see` in plan and code | Reading `.md` “to recall the pattern” |
+| [annotation.md](https://github.com/danilger/patterns/blob/main/consume/annotation.md) — mark format | Cloning or walking `gof/`, `frontend/`, `backend/` |
 
-Открывай **только README** (индекс) и при необходимости `consume/annotation.md`. Объяснения `.md` и демо `.js` — для человека по ссылке из аннотации.
+Open **only the README** (index) and, if needed, `consume/annotation.md`. Explanations (`.md`) and demos (`.js`) are for humans via the annotation link.
 
-## Когда применять
+## When to apply
 
-Только если пользователь создаёт или пересматривает план:
+Only when the user creates or revises a plan:
 
 - Cursor Plan mode
 - opsx-propose / opsx-explore
-- явный вызов (`/patterns-plan`, «следуй compose-from-patterns»)
+- explicit invoke (`/patterns-plan`, “follow compose-from-patterns”)
 
-Не применять на обычный кодинг, багфиксы, рефакторинг без плана, вопросы.
+Do not apply for ordinary coding, bugfixes, plan-less refactors, or Q&A.
 
-## Источники (минимальный набор)
+## Sources (minimal set)
 
-1. Индекс-каталог: https://github.com/danilger/patterns/blob/main/README.md
-2. Формат аннотаций: https://github.com/danilger/patterns/blob/main/consume/annotation.md
-3. Шаблон ссылки: `https://github.com/danilger/patterns/blob/main/<область>/…/<slug>/<slug>.md`
+1. Catalog index: https://github.com/danilger/patterns/blob/main/README.md
+2. Annotation format: https://github.com/danilger/patterns/blob/main/consume/annotation.md
+3. Link template: `https://github.com/danilger/patterns/blob/main/<area>/…/<slug>/<slug>.md`
 
-Путь к `.md` бери из таблиц README (колонка «Файлы» → `.md`). Не подставляй ссылки на `.js`.
+Take the `.md` path from README tables (Files column → `.md`). Never link to `.js`.
 
-## Процедура
+## Procedure
 
-1. Кратко зафиксируй цель и границы задачи.
-2. По README выбери область: `gof/` | `frontend/react|rendering|performance` | `backend/nest`.
-3. Для **каждого крупного шага** плана:
-   - подбери 1+ имя паттерна из таблиц README (по смыслу задачи — из своих знаний);
-   - в шаг запиши имя + URL на соответствующий `.md` из README;
-   - если ничего не подходит — `@ad-hoc` + `@why` (одна фраза).
-4. Большинство шагов — из каталога; меньшинство — явные `@ad-hoc`. Не считай проценты строк.
-5. Запрещено: новый слой абстракции только ради метки; GoF на тривиальный glue; открытие демо-файлов паттернов; копирование кода из библиотеки паттернов в продукт.
-6. Не реализуй код в этом проходе — только план (если пользователь не попросил иное после утверждения плана).
+1. Briefly capture the goal and task boundaries.
+2. From the README, pick an area: `gof/` | `frontend/react|rendering|performance` | `backend/nest`.
+3. For **each major plan step**:
+   - pick 1+ pattern names from the README tables (from your knowledge, by task meaning);
+   - write the name + URL to the matching `.md` from the README into the step;
+   - if nothing fits — `@ad-hoc` + `@why` (one phrase).
+4. Most steps come from the catalog; a minority are explicit `@ad-hoc`. Don't count line percentages.
+5. Forbidden: a new abstraction layer only for a mark; GoF on trivial glue; opening pattern demo files; copying code from the patterns library into the product.
+6. Don't implement code in this pass — plan only (unless the user asks otherwise after approving the plan).
 
-## Шаблон выхода плана
+## Plan output template
 
 ```markdown
-## План
+## Plan
 
-| Шаг | Паттерн / исключение | Ссылка (для @see в коде) |
-|-----|----------------------|--------------------------|
+| Step | Pattern / exception | Link (for @see in code) |
+|------|---------------------|-------------------------|
 | 1. … | Repository | https://github.com/danilger/patterns/blob/main/backend/nest/repository/repository.md |
 | 2. … | @ad-hoc: … | @why: … |
 
-## Замечания
+## Notes
 - …
 ```
 
-Либо нумерованный список в том же формате: шаг → pattern URL | `@ad-hoc` + why.
+Or a numbered list in the same shape: step → pattern URL | `@ad-hoc` + why.
 
-## После утверждения плана
+## After the plan is approved
 
-Напоминание исполнителю (не часть этого skill): в коде ставить метки по `consume/annotation.md` в соответствии с таблицей плана. Ссылки читает человек; агент по ним паттерны не «подтягивает».
+Reminder for the implementer (not part of this skill): put marks in code per `consume/annotation.md` matching the plan table. Humans follow the links; the agent does not “pull” patterns from them.

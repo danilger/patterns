@@ -1,31 +1,31 @@
-# Consume — артефакты для продуктовых проектов
+# Consume — artifacts for product projects
 
-Пакет для агентов **вне** этой библиотеки: короткое правило + skill планирования + формат аннотаций.
+Pack for agents **outside** this library: a short rule + planning skill + annotation format.
 
-| Артефакт | Файл | Куда в продукте |
-|----------|------|-----------------|
-| Правило | [AGENTS.snippet.md](./AGENTS.snippet.md) | Вставить в `AGENTS.md` (или `.cursor/rules`) |
-| Skill | [skills/compose-from-patterns/](./skills/compose-from-patterns/) | `.cursor/skills/compose-from-patterns/` или `~/.cursor/skills/compose-from-patterns/` |
-| Аннотации | [annotation.md](./annotation.md) | Ссылка из snippet / skill; образец для кода |
+| Artifact | File | Where in the product |
+|----------|------|----------------------|
+| Rule | [AGENTS.snippet.md](./AGENTS.snippet.md) | Paste into `AGENTS.md` (or `.cursor/rules`) |
+| Skill | [skills/compose-from-patterns/](./skills/compose-from-patterns/) | `.cursor/skills/compose-from-patterns/` or `~/.cursor/skills/compose-from-patterns/` |
+| Annotations | [annotation.md](./annotation.md) | Linked from snippet / skill; sample for code |
 
-## GitHub (без локального клона)
+## GitHub (no local clone)
 
-- Пакет: https://github.com/danilger/patterns/tree/main/consume
-- Правило: https://github.com/danilger/patterns/blob/main/consume/AGENTS.snippet.md
+- Pack: https://github.com/danilger/patterns/tree/main/consume
+- Rule: https://github.com/danilger/patterns/blob/main/consume/AGENTS.snippet.md
 - Skill: https://github.com/danilger/patterns/blob/main/consume/skills/compose-from-patterns/SKILL.md
-- Аннотации: https://github.com/danilger/patterns/blob/main/consume/annotation.md
-- Каталог (индекс имён): https://github.com/danilger/patterns/blob/main/README.md
+- Annotations: https://github.com/danilger/patterns/blob/main/consume/annotation.md
+- Catalog (name index): https://github.com/danilger/patterns/blob/main/README.md
 
-## Разделение ролей
+## Role split
 
-| Аудитория | Что берёт из библиотеки |
-|-----------|-------------------------|
-| **Агент** | Только список паттернов из README + URL на `.md` для `@see` в плане и коде |
-| **Человек** | `.md` объяснения и `.js` демо — чтобы быстро понять размеченный код |
+| Audience | What they take from the library |
+|----------|----------------------------------|
+| **Agent** | Only the pattern list from README + `.md` URLs for `@see` in plans and code |
+| **Human** | `.md` explanations and `.js` demos — to quickly understand annotated code |
 
-Агент **не** ходит по демо и не учится по этой репе: паттерны ему уже известны. Цель consume — единый каталог имён и стабильные ссылки для аннотаций.
+The agent does **not** walk demos or relearn from this repo: it already knows the patterns. Consume exists for a shared name catalog and stable annotation links.
 
-## Важно
+## Important
 
-- Skill с `disable-model-invocation: true` — **не** на любой запрос. Только Plan mode / opsx-propose / opsx-explore / явный вызов.
-- [../AGENTS.md](../AGENTS.md) в корне — правила **сопровождения каталога**, не путать с `AGENTS.snippet.md`.
+- Skill with `disable-model-invocation: true` — **not** for every request. Only Plan mode / opsx-propose / opsx-explore / explicit invoke.
+- Root [../AGENTS.md](../AGENTS.md) — rules for **maintaining this catalog**, not the same as `AGENTS.snippet.md`.

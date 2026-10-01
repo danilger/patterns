@@ -1,10 +1,10 @@
-# Формат аннотаций в коде
+# Code annotation format
 
-Цель — на ревью **человеку** сразу видно: блок собран по паттерну из каталога [danilger/patterns](https://github.com/danilger/patterns) или это осознанное исключение. Ссылка ведёт к текстовому описанию в библиотеке.
+Goal — on review, a **human** immediately sees whether a block follows a pattern from [danilger/patterns](https://github.com/danilger/patterns) or is an intentional exception. The link points at the library write-up.
 
-Агент паттерн уже знает: аннотация — не шпаргалка для модели, а навигация для читателя кода / PR.
+The agent already knows the pattern: the annotation is navigation for the code / PR reader, not a cheat sheet for the model.
 
-## Паттерн из каталога
+## Pattern from the catalog
 
 ```ts
 /**
@@ -14,34 +14,34 @@
 export class OrderRepository { /* ... */ }
 ```
 
-- `@pattern` — имя как в [README-каталоге](https://github.com/danilger/patterns/blob/main/README.md) (можно кратко).
-- `@see` — URL на **`.md`** объяснения (никогда не на `.js` / демо), путь вида `…/<slug>/<slug>.md` из таблиц README.
+- `@pattern` — name as in the [README catalog](https://github.com/danilger/patterns/blob/main/README.md) (short form OK).
+- `@see` — URL to the **`.md`** explanation (never to `.js` / demos), path like `…/<slug>/<slug>.md` from the README tables.
 
-Допустимы JSDoc, `//` или блочный комментарий над классом / функцией / модулем — главное, чтобы метки были рядом с границей блока.
+JSDoc, `//`, or a block comment above a class / function / module are all fine — keep marks next to the block boundary.
 
-## Исключение (не из каталога)
+## Exception (not from the catalog)
 
 ```ts
 /**
  * @ad-hoc Stripe webhook signature quirks
- * @why нет паттерна под провайдер-специфичный HMAC + raw body
+ * @why no catalog pattern for provider-specific HMAC + raw body
  */
 function verifyStripeSignature(/* ... */) { /* ... */ }
 ```
 
-- `@ad-hoc` — что за кусок.
-- `@why` — одна фраза, почему не покрыто каталогом.
+- `@ad-hoc` — what the chunk is.
+- `@why` — one phrase why the catalog doesn't cover it.
 
-## Когда не размечать
+## When not to annotate
 
-- Тривиальный glue, реэкспорт, однострочные хелперы без архитектурной роли.
-- Код, уже целиком описанный родительской аннотацией файла (не дублируй на каждую строку).
+- Trivial glue, re-exports, one-line helpers with no architectural role.
+- Code already covered by a parent file-level annotation (don't repeat on every line).
 
-## Связь с планом
+## Tie-in to the plan
 
-В плане каждый крупный шаг = `@pattern` + URL **или** `@ad-hoc` + why. В коде метки должны совпадать с планом.
+In the plan, each major step = `@pattern` + URL **or** `@ad-hoc` + why. Code marks must match the plan.
 
-## Чего агенту не делать
+## What the agent must not do
 
-- Не открывать демо-файлы паттернов (`*.js`, `*-class.js`, `*-functional.js`) и не копировать их в продукт.
-- Не читать `.md` каталога, чтобы «выучить» паттерн — достаточно имени из README и URL для `@see`.
+- Don't open pattern demo files (`*.js`, `*-class.js`, `*-functional.js`) or copy them into the product.
+- Don't read catalog `.md` files to “learn” a pattern — a README name + `@see` URL is enough.

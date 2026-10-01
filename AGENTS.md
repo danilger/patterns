@@ -1,61 +1,62 @@
-# AGENTS.md — правила библиотеки паттернов
+# AGENTS.md — pattern library layout rules
 
-Этот репозиторий — **каталог паттернов по областям**. Агенты читают `README.md` как индекс и этот файл — как правила раскладки при добавлении / правке паттернов.
+This repo is a **patterns catalog by area**. Agents use `README.md` as the index and this file as layout rules when adding or editing patterns.
 
-Каталог для людей и ссылок: [README.md](./README.md)  
-Корень на GitHub: https://github.com/danilger/patterns
-
----
-
-## Цель
-
-- Дать **людям** объяснения (`.md`) и короткие демо (`.js`), чтобы быстро разобрать размеченный код.
-- Дать **агентам** единый индекс имён + стабильные URL на `.md` для аннотаций в чужих репо (не для обучения и не для копирования демо).
-- В целевых проектах в коде / PR оставлять ссылку на файл объяснения в этой библиотеке.
-- Новые паттерны складывать **по одному порядку**, без разрозненных файлов в корне категории.
-
-Для **написания планов и кода в других проектах** используй пакет [consume/](./consume/) (правило + skill планирования). Агент из каталога берёт только список и ссылки; демо не читает. Не смешивай consume с правилами раскладки каталога ниже.
+Human catalog and links: [README.md](./README.md)  
+GitHub root: https://github.com/danilger/patterns
 
 ---
 
-## Иерархия каталогов
+## Goals
+
+- Give **humans** explanations (`.md`) and short demos (`.js`) to quickly understand annotated code.
+- Give **agents** a single name index + stable `.md` URLs for annotations in other repos (not for learning and not for copying demos).
+- In product projects, leave a link to the explanation file in this library from code / PRs.
+- Store new patterns in **one layout**, without loose files at the category root.
+
+For **plans and code in other projects**, use the [consume/](./consume/) pack (rule + planning skill). From the catalog, an agent takes only the list and links; it does not read demos. Do not mix consume with the catalog layout rules below.
+
+---
+
+## Directory hierarchy
 
 ```text
-<область>/<подобласть>/<slug-паттерна>/
-  <slug-паттерна>.md              # обязательно: объяснение смысла
-  <slug-паттерна>.js              # демо (frontend / backend)
-  # GoF — два варианта демо:
-  <slug-паттерна>-class.js        # ООП / классы
-  <slug-паттерна>-functional.js   # функции, замыкания, plain objects
+<area>/<subarea>/<pattern-slug>/
+  <pattern-slug>.md              # required: meaning / explanation
+  <pattern-slug>.js              # demo (frontend / backend)
+  # GoF — two demo variants:
+  <pattern-slug>-class.js        # OOP / classes
+  <pattern-slug>-functional.js   # functions, closures, plain objects
 ```
 
-| Уровень | Примеры | Назначение |
-|---------|---------|------------|
-| Область | `gof/`, `frontend/`, `backend/` | Крупный домен |
-| Подобласть | `creational/`, `react/`, `nest/` | Категория внутри домена |
-| Папка паттерна | `compound-components/` | Один паттерн = одна папка |
-| Файлы | `compound-components.js`, `compound-components.md` | Имя файла = имя папки (slug) |
-| GoF-демо | `strategy-class.js`, `strategy-functional.js` | Суффикс парадигмы в имени файла |
-### Области (не плодить новые без нужды)
+| Level | Examples | Purpose |
+|-------|----------|---------|
+| Area | `gof/`, `frontend/`, `backend/` | Large domain |
+| Subarea | `creational/`, `react/`, `nest/` | Category within the domain |
+| Pattern folder | `compound-components/` | One pattern = one folder |
+| Files | `compound-components.js`, `compound-components.md` | File base name = folder name (slug) |
+| GoF demos | `strategy-class.js`, `strategy-functional.js` | Paradigm suffix in the file name |
 
-| Область | Подобласти |
-|---------|------------|
+### Areas (don't invent new ones without need)
+
+| Area | Subareas |
+|------|----------|
 | `gof/` | `creational/`, `structural/`, `behavioral/` |
 | `frontend/` | `react/`, `rendering/`, `performance/` |
 | `backend/` | `nest/` |
 
-Новую подобласть создавать только если паттерн явно не подходит ни в одну существующую.
+Create a new subarea only if the pattern clearly fits none of the existing ones.
 
 ---
 
-## Именование
+## Naming
 
-- **Slug:** `kebab-case`, латиница, без пробелов и скобок: `compound-components`, `factory-method`, `list-virtualization`.
-- Имя **папки** и базовое имя **файлов** совпадают: `…/compound-components/compound-components.{js,md}`.
-- Не класть несколько паттернов в одну папку.
-- Не оставлять «голые» `.js` / `.md` прямо в подобласти для **новых** паттернов.
+- **Slug:** `kebab-case`, Latin letters, no spaces or parentheses: `compound-components`, `factory-method`, `list-virtualization`.
+- **Folder** name and **file** base name match: `…/compound-components/compound-components.{js,md}`.
+- Don't put multiple patterns in one folder.
+- Don't leave bare `.js` / `.md` files directly in a subarea for **new** patterns.
 
-### Эталон (целевая раскладка)
+### Canonical layout
 
 ```text
 frontend/react/compound-components/
@@ -68,7 +69,7 @@ gof/behavioral/strategy/
   strategy.md
 ```
 
-Ссылка для кода / PR (предпочитать `.md`):
+Link for code / PR (prefer `.md`):
 
 ```text
 https://github.com/danilger/patterns/blob/main/frontend/react/compound-components/compound-components.md
@@ -76,72 +77,73 @@ https://github.com/danilger/patterns/blob/main/frontend/react/compound-component
 
 ---
 
-## Содержимое файлов
+## File contents
 
-### `<slug>.js` / `<slug>-class.js` / `<slug>-functional.js` (демо + метаданные)
+### `<slug>.js` / `<slug>-class.js` / `<slug>-functional.js` (demo + metadata)
 
-В шапке JSDoc-блок:
+JSDoc header:
 
 ```js
 /**
- * @pattern Имя паттерна (при необходимости — перевод)
- * @area Frontend / React   // или @category Structural и т.п.
- * @variant class           // или functional — для GoF-пар
+ * @pattern Pattern name (translation optional)
+ * @area Frontend / React   // or @category Structural, etc.
+ * @variant class           // or functional — for GoF pairs
  * @sources …
  *
  * @description
- * 1–4 предложения: суть паттерна.
+ * 1–4 sentences: what the pattern is.
  *
  * @when
- * - когда применять
+ * - when to apply it
  */
 ```
 
-Ниже — короткое, читаемое демо (без лишнего фреймворк-шума, где возможно).
+Below that — a short, readable demo (minimal framework noise when possible).
 
-Для **GoF** держи оба варианта, если идея хорошо ложится на функции (почти всегда в JS). Один сценарий — две парадигмы; не плодить разные сюжеты.
-### `<slug>.md` (объяснение)
+For **GoF**, keep both variants when the idea maps well to functions (almost always in JS). One scenario — two paradigms; don't invent different storylines.
 
-- Смысл паттерна, зачем нужен, как устроен.
-- Связь с демо в соседнем `.js`.
-- Когда применять / не применять.
-- Отличия от соседних паттернов (кратко).
-- Язык: русский (как в README), если нет явной просьбы иначе.
+### `<slug>.md` (explanation)
 
-Для ссылок из чужих репозиториев **всегда** указывай `.md`, если он есть.
+- What the pattern means, why it exists, how it works.
+- Tie-in to the neighboring `.js` demo.
+- When to use / not use.
+- Differences from neighboring patterns (brief).
+- Language: English for agent-facing docs in this repo; pattern explanations may stay as authored unless asked otherwise.
 
----
-
-## Чеклист: добавить паттерн
-
-1. Выбрать область и подобласть по таблице выше.
-2. Создать папку `<подобласть>/<slug>/`.
-3. Добавить `<slug>.md` и демо:
-   - GoF: `<slug>-class.js` + `<slug>-functional.js` (где FP уместен).
-   - Остальные: `<slug>.js`.
-4. Обновить каталог в [README.md](./README.md) (строка в нужной таблице + актуальные пути).
-5. Не коммитить секреты; не менять git config.
-
-## Чеклист: править существующий
-
-1. Не выносить файлы «плоско» в подобласть — держи `.md` и демо внутри папки паттерна.
-2. При переименовании slug обнови имя папки, всех файлов и строку в README.
-3. После правок не оставляй дублей по старым путям.
+For links from other repositories, **always** point at `.md` when it exists.
 
 ---
 
-## Миграция (текущее состояние)
+## Checklist: add a pattern
+
+1. Pick area and subarea from the table above.
+2. Create folder `<subarea>/<slug>/`.
+3. Add `<slug>.md` and demos:
+   - GoF: `<slug>-class.js` + `<slug>-functional.js` (where FP fits).
+   - Others: `<slug>.js`.
+4. Update the catalog in [README.md](./README.md) (row in the right table + current paths).
+5. Don't commit secrets; don't change git config.
+
+## Checklist: edit an existing one
+
+1. Don't flatten files into the subarea — keep `.md` and demos inside the pattern folder.
+2. On slug rename, update folder name, all files, and the README row.
+3. After edits, don't leave duplicates at old paths.
+
+---
+
+## Migration (current state)
 
 - Frontend / Backend: `<slug>/<slug>.js` + `<slug>.md`.
 - GoF: `<slug>/<slug>-class.js` + `<slug>-functional.js` + `<slug>.md`.
-- Новые паттерны — только в папке slug; плоские файлы в подобласти не добавлять.
+- New patterns only inside a slug folder; don't add flat files in a subarea.
 
 ---
 
-## Чего не делать
+## Don't
 
-- Не создавать паттерн без папки (для нового материала).
-- Не называть папку иначе, чем базовый slug файлов внутри.
-- Не писать только `.js` без `.md` для новых паттернов.
-- Не дублировать один паттерн в двух областях — выбрать основную; в `.md` можно кратко упомянуть связь с другой областью.
-- Не раздувать демо до мини-приложения: демо иллюстрирует идею, объяснение — в `.md`.
+- Don't create a pattern without a folder (for new material).
+- Don't name the folder differently from the base slug of files inside.
+- Don't ship only `.js` without `.md` for new patterns.
+- Don't duplicate one pattern in two areas — pick a primary; the `.md` may briefly mention another area.
+- Don't blow demos into mini-apps: the demo illustrates the idea; explanation lives in `.md`.
