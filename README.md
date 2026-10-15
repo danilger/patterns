@@ -83,7 +83,7 @@ In **GoF**, each pattern has two demos: `<slug>-class.js` (OOP) and `<slug>-func
 
 | Rule | File |
 |------|------|
-| Patterns catalog (consume in product) | [patterns-catalog.md](./agent/rules/patterns-catalog.md) |
+| Patterns catalog (wire into product) | [patterns-catalog.md](./agent/rules/patterns-catalog.md) |
 | JS/TS file structure | [js_file_structure.md](./agent/rules/js_file_structure.md) |
 | JS/TS file naming | [js_file_naming.md](./agent/rules/js_file_naming.md) |
 | PR/MR inline review comments | [pr-inline-review-comments.md](./agent/rules/pr-inline-review-comments.md) |
@@ -142,7 +142,7 @@ Also: [`js-language-builtins`](catalog/gof/js-language-builtins/js-language-buil
 
 ## Frontend — React (`catalog/frontend/react/`)
 
-Patterns for **UI composition and state APIs**. Rendering (CSR/SSR/…) lives in [`catalog/frontend/rendering/`](#frontend--rendering-frontendrendering); loading and perf in [`catalog/frontend/performance/`](#frontend--performance-frontendperformance).
+Patterns for **UI composition and state APIs**. Rendering (CSR/SSR/…) lives in [`catalog/frontend/rendering/`](./catalog/frontend/rendering/); loading and perf in [`catalog/frontend/performance/`](./catalog/frontend/performance/).
 
 | Pattern | Files |
 |---------|-------|
