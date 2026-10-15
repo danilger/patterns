@@ -14,7 +14,7 @@ These are **not** rules for maintaining this repository — see root
 | [patterns-catalog.md](./patterns-catalog.md) | How agents use danilger/patterns (names + `.md` `@see`, planning skill) | Any product that annotates code with catalog patterns |
 | [js_file_structure.md](./js_file_structure.md) | Export-first, `HELPERS` / `TYPES` / …, ~100-line threshold | JS/TS projects that want a shared module shape |
 | [js_file_naming.md](./js_file_naming.md) | `kebab-case` + role postfix (`.hook`, `.store`, `.<pattern>`, …) | JS/TS projects with hooks, stores, pattern modules |
-| [pr-inline-review-comments.md](./pr-inline-review-comments.md) | Inline review comments on the PR/MR diff after open/update | Products where agents open PR/MR themselves |
+| [pr-inline-review-comments.md](./pr-inline-review-comments.md) | PR/MR body: summary + suggested review order; inline comments on the diff | Products where agents open PR/MR themselves |
 
 ## How to wire into a product
 

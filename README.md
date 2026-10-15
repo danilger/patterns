@@ -86,7 +86,7 @@ In **GoF**, each pattern has two demos: `<slug>-class.js` (OOP) and `<slug>-func
 | Patterns catalog (wire into product) | [patterns-catalog.md](./agent/rules/patterns-catalog.md) |
 | JS/TS file structure | [js_file_structure.md](./agent/rules/js_file_structure.md) |
 | JS/TS file naming | [js_file_naming.md](./agent/rules/js_file_naming.md) |
-| PR/MR inline review comments | [pr-inline-review-comments.md](./agent/rules/pr-inline-review-comments.md) |
+| PR/MR summary, review order, inline comments | [pr-inline-review-comments.md](./agent/rules/pr-inline-review-comments.md) |
 
 Full index: [agent/rules/README.md](./agent/rules/README.md).
 
