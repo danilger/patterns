@@ -9,13 +9,13 @@ The agent already knows the pattern: the annotation is navigation for the code /
 ```ts
 /**
  * @pattern Repository
- * @see https://github.com/danilger/patterns/blob/main/backend/nest/repository/repository.md
+ * @see https://github.com/danilger/patterns/blob/main/catalog/backend/nest/repository/repository.md
  */
 export class OrderRepository { /* ... */ }
 ```
 
 - `@pattern` — name as in the [README catalog](https://github.com/danilger/patterns/blob/main/README.md) (short form OK).
-- `@see` — URL to the **`.md`** explanation (never to `.js` / demos), path like `…/<slug>/<slug>.md` from the README tables.
+- `@see` — URL to the **`.md`** explanation (never to `.js` / demos), path like `…/catalog/<area>/…/<slug>/<slug>.md` from the README tables.
 
 JSDoc, `//`, or a block comment above a class / function / module are all fine — keep marks next to the block boundary.
 

@@ -48,8 +48,8 @@ flowchart TB
 
 ## Связь с другими паттернами
 
-- С **Code Splitting** / **Lazy Loading** (`frontend/performance/`).
-- Со **Streaming SSR** (`frontend/rendering/streaming-ssr/`).
+- С **Code Splitting** / **Lazy Loading** (`catalog/frontend/performance/`).
+- Со **Streaming SSR** (`catalog/frontend/rendering/streaming-ssr/`).
 - Пара с **Error Boundary** снаружи.
 
 ## Краткий итог

@@ -1,27 +1,48 @@
-# AGENTS.md — pattern library layout rules
+# AGENTS.md — repository layout rules
 
-This repo is a **patterns catalog by area**. Agents use `README.md` as the index and this file as layout rules when adding or editing patterns.
+This repo holds a **pattern catalog** plus an **agent pack** (rules / skills / annotations). Agents use [README.md](./README.md) as the index and this file as layout rules when adding or editing content.
 
 Human catalog and links: [README.md](./README.md)  
 GitHub root: https://github.com/danilger/patterns
 
 ---
 
-## Goals
+## Top-level layout
 
-- Give **humans** explanations (`.md`) and short demos (`.js`) to quickly understand annotated code.
-- Give **agents** a single name index + stable `.md` URLs for annotations in other repos (not for learning and not for copying demos).
-- In product projects, leave a link to the explanation file in this library from code / PRs.
-- Store new patterns in **one layout**, without loose files at the category root.
+```text
+catalog/     # patterns only (area / subarea / slug)
+agent/       # product pack: rules, skills, annotation
+AGENTS.md    # THIS file — how to maintain the repo
+README.md    # index: Patterns | Rules | Skills
+```
 
-For **plans and code in other projects**, use the [consume/](./consume/) pack (rule + planning skill). From the catalog, an agent takes only the list and links; it does not read demos. Do not mix consume with the catalog layout rules below.
+| Path | What belongs here |
+|------|-------------------|
+| [catalog/](./catalog/) | Pattern explanations + demos |
+| [agent/rules/](./agent/rules/) | Short always-on policies for product `AGENTS.md` |
+| [agent/skills/](./agent/skills/) | Procedures (`SKILL.md`) for Cursor / Multica |
+| [agent/annotation.md](./agent/annotation.md) | `@pattern` / `@see` / `@ad-hoc` mark format |
+| [agent/README.md](./agent/README.md) | How to wire the pack into a product |
+
+Do **not** put product rules or skills under `catalog/`. Do **not** put pattern demos under `agent/`.
+
+For **plans and code in other projects**, use the [agent/](./agent/) pack. From the catalog, an agent takes only the name list and `.md` links; it does not read demos.
 
 ---
 
-## Directory hierarchy
+## Goals
+
+- Give **humans** explanations (`.md`) and short demos (`.js`) under `catalog/` to quickly understand annotated code.
+- Give **agents** a single name index + stable `.md` URLs for annotations in other repos (not for learning and not for copying demos).
+- Ship reusable **rules** and **skills** under `agent/` for product repos.
+- Store new patterns in **one layout**, without loose files at the category root.
+
+---
+
+## Pattern directory hierarchy (`catalog/`)
 
 ```text
-<area>/<subarea>/<pattern-slug>/
+catalog/<area>/<subarea>/<pattern-slug>/
   <pattern-slug>.md              # required: meaning / explanation
   <pattern-slug>.js              # demo (frontend / backend)
   # GoF — two demo variants:
@@ -31,7 +52,7 @@ For **plans and code in other projects**, use the [consume/](./consume/) pack (r
 
 | Level | Examples | Purpose |
 |-------|----------|---------|
-| Area | `gof/`, `frontend/`, `backend/` | Large domain |
+| Area | `catalog/gof/`, `catalog/frontend/`, `catalog/backend/` | Large domain |
 | Subarea | `creational/`, `react/`, `nest/` | Category within the domain |
 | Pattern folder | `compound-components/` | One pattern = one folder |
 | Files | `compound-components.js`, `compound-components.md` | File base name = folder name (slug) |
@@ -41,15 +62,15 @@ For **plans and code in other projects**, use the [consume/](./consume/) pack (r
 
 | Area | Subareas |
 |------|----------|
-| `gof/` | `creational/`, `structural/`, `behavioral/` |
-| `frontend/` | `react/`, `rendering/`, `performance/` |
-| `backend/` | `nest/` |
+| `catalog/gof/` | `creational/`, `structural/`, `behavioral/` |
+| `catalog/frontend/` | `react/`, `rendering/`, `performance/` |
+| `catalog/backend/` | `nest/` |
 
 Create a new subarea only if the pattern clearly fits none of the existing ones.
 
 ---
 
-## Naming
+## Naming (patterns)
 
 - **Slug:** `kebab-case`, Latin letters, no spaces or parentheses: `compound-components`, `factory-method`, `list-virtualization`.
 - **Folder** name and **file** base name match: `…/compound-components/compound-components.{js,md}`.
@@ -59,11 +80,11 @@ Create a new subarea only if the pattern clearly fits none of the existing ones.
 ### Canonical layout
 
 ```text
-frontend/react/compound-components/
+catalog/frontend/react/compound-components/
   compound-components.js
   compound-components.md
 
-gof/behavioral/strategy/
+catalog/gof/behavioral/strategy/
   strategy-class.js
   strategy-functional.js
   strategy.md
@@ -72,12 +93,28 @@ gof/behavioral/strategy/
 Link for code / PR (prefer `.md`):
 
 ```text
-https://github.com/danilger/patterns/blob/main/frontend/react/compound-components/compound-components.md
+https://github.com/danilger/patterns/blob/main/catalog/frontend/react/compound-components/compound-components.md
 ```
 
 ---
 
-## File contents
+## Rules and skills (`agent/`)
+
+### Add a rule
+
+1. Create `agent/rules/<slug>.md` (short policy; no long CLI how-to).
+2. Add a row to [agent/rules/README.md](./agent/rules/README.md).
+3. Mention it from [agent/README.md](./agent/README.md) / root [README.md](./README.md) if it is a primary pack item.
+
+### Add a skill
+
+1. Create `agent/skills/<slug>/SKILL.md` (YAML frontmatter + body).
+2. Link it from [agent/README.md](./agent/README.md) and root README Skills table.
+3. If a short always-on policy is needed, put that in `agent/rules/` and point at the skill for how-to.
+
+---
+
+## File contents (patterns)
 
 ### `<slug>.js` / `<slug>-class.js` / `<slug>-functional.js` (demo + metadata)
 
@@ -116,8 +153,8 @@ For links from other repositories, **always** point at `.md` when it exists.
 
 ## Checklist: add a pattern
 
-1. Pick area and subarea from the table above.
-2. Create folder `<subarea>/<slug>/`.
+1. Pick area and subarea from the table above (under `catalog/`).
+2. Create folder `catalog/<area>/<subarea>/<slug>/`.
 3. Add `<slug>.md` and demos:
    - GoF: `<slug>-class.js` + `<slug>-functional.js` (where FP fits).
    - Others: `<slug>.js`.
@@ -132,14 +169,6 @@ For links from other repositories, **always** point at `.md` when it exists.
 
 ---
 
-## Migration (current state)
-
-- Frontend / Backend: `<slug>/<slug>.js` + `<slug>.md`.
-- GoF: `<slug>/<slug>-class.js` + `<slug>-functional.js` + `<slug>.md`.
-- New patterns only inside a slug folder; don't add flat files in a subarea.
-
----
-
 ## Don't
 
 - Don't create a pattern without a folder (for new material).
@@ -147,3 +176,4 @@ For links from other repositories, **always** point at `.md` when it exists.
 - Don't ship only `.js` without `.md` for new patterns.
 - Don't duplicate one pattern in two areas — pick a primary; the `.md` may briefly mention another area.
 - Don't blow demos into mini-apps: the demo illustrates the idea; explanation lives in `.md`.
+- Don't mix `catalog/` and `agent/` concerns in one folder.
