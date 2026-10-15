@@ -13,6 +13,7 @@
 |------|--------|------------------|
 | [js_file_structure.md](./js_file_structure.md) | Export-first, секции `HELPERS` / `TYPES` / …, порог ~100 строк | JS/TS-проекты, где нужна единая форма модуля |
 | [js_file_naming.md](./js_file_naming.md) | `kebab-case` + постфикс роли (`.hook`, `.store`, `.<pattern>`, …) | JS/TS-проекты с хуками, сторами и pattern-модулями |
+| [pr-inline-review-comments.md](./pr-inline-review-comments.md) | Inline review comments на diff после open/update PR/MR | Любой продукт, где агенты сами открывают PR/MR |
 
 ## Как встроить в проект
 
@@ -20,6 +21,7 @@
    ```text
    docs/agent_rules/js_file_structure.md
    docs/agent_rules/js_file_naming.md
+   docs/agent_rules/pr-inline-review-comments.md
    ```
    или рядом с `AGENTS.md` / в `.cursor/rules/` (как текст правила).
 2. В `AGENTS.md` проекта добавь ссылки или короткие включения:
@@ -30,6 +32,9 @@
 
    ## Именование
    См. docs/agent_rules/js_file_naming.md
+
+   ## PR/MR inline comments
+   См. docs/agent_rules/pr-inline-review-comments.md
    ```
 
 3. Не смешивай эти правила с пакетом паттернов: для Patterns + planning
@@ -40,3 +45,4 @@
 - Каталог: https://github.com/danilger/patterns/tree/main/agent_rules
 - Структура: https://github.com/danilger/patterns/blob/main/agent_rules/js_file_structure.md
 - Именование: https://github.com/danilger/patterns/blob/main/agent_rules/js_file_naming.md
+- PR/MR inline: https://github.com/danilger/patterns/blob/main/agent_rules/pr-inline-review-comments.md
