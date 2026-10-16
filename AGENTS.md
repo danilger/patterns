@@ -19,7 +19,7 @@ README.md    # index: Patterns | Rules | Skills
 | Path | What belongs here |
 |------|-------------------|
 | [catalog/](./catalog/) | Pattern explanations + demos |
-| [agent/rules/](./agent/rules/) | Short always-on policies for product `AGENTS.md` |
+| [agent/rules/](./agent/rules/) | Short always-on policies by area (`catalog/`, `js-ts/`, `workflow/`) for product `AGENTS.md` |
 | [agent/skills/](./agent/skills/) | Procedures (`SKILL.md`) for Cursor / Multica |
 | [agent/annotation.md](./agent/annotation.md) | `@pattern` / `@see` / `@ad-hoc` mark format |
 | [agent/README.md](./agent/README.md) | How to wire the pack into a product |
@@ -102,15 +102,16 @@ https://github.com/danilger/patterns/blob/main/catalog/frontend/react/compound-c
 
 ### Add a rule
 
-1. Create `agent/rules/<slug>.md` (short policy; no long CLI how-to).
-2. Add a row to [agent/rules/README.md](./agent/rules/README.md).
-3. Mention it from [agent/README.md](./agent/README.md) / root [README.md](./README.md) if it is a primary pack item.
+1. Pick an area under `agent/rules/` (`catalog/`, `js-ts/`, `workflow/`) or add a new area folder if none fits.
+2. Create `agent/rules/<area>/<slug>.md` (short policy; no long CLI how-to). Do not leave bare rule files next to `agent/rules/README.md`.
+3. Add a row to [agent/rules/README.md](./agent/rules/README.md).
+4. Mention it from [agent/README.md](./agent/README.md) / root [README.md](./README.md) if it is a primary pack item.
 
 ### Add a skill
 
 1. Create `agent/skills/<slug>/SKILL.md` (YAML frontmatter + body).
 2. Link it from [agent/README.md](./agent/README.md) and root README Skills table.
-3. If a short always-on policy is needed, put that in `agent/rules/` and point at the skill for how-to.
+3. If a short always-on policy is needed, put that in `agent/rules/<area>/` and point at the skill for how-to.
 
 ---
 

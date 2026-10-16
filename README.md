@@ -29,17 +29,19 @@ Pack: **[agent/](./agent/)** · https://github.com/danilger/patterns/tree/main/a
 | What | Where to get it | Where to put it |
 |------|-----------------|-----------------|
 | **Rules** | [agent/rules/](./agent/rules/) | Paste / link from product `AGENTS.md` |
-| **Patterns-catalog rule** | [agent/rules/patterns-catalog.md](./agent/rules/patterns-catalog.md) | Product `AGENTS.md` |
+| **Patterns-catalog rule** | [agent/rules/catalog/patterns-catalog.md](./agent/rules/catalog/patterns-catalog.md) | Product `AGENTS.md` |
 | **Skill** (plans only) | [agent/skills/compose-from-patterns/](./agent/skills/compose-from-patterns/) | `.cursor/skills/compose-from-patterns/` or Multica import |
+| **Skill** (lazy / YAGNI) | [agent/skills/ponytail/](./agent/skills/ponytail/) | `.cursor/skills/ponytail/` or Multica import |
 | **Annotations** | [agent/annotation.md](./agent/annotation.md) | Follow when marking up code / PRs |
 
 ```text
-https://github.com/danilger/patterns/blob/main/agent/rules/patterns-catalog.md
+https://github.com/danilger/patterns/blob/main/agent/rules/catalog/patterns-catalog.md
 https://github.com/danilger/patterns/blob/main/agent/skills/compose-from-patterns/SKILL.md
+https://github.com/danilger/patterns/blob/main/agent/skills/ponytail/SKILL.md
 https://github.com/danilger/patterns/blob/main/agent/annotation.md
 ```
 
-- Skill with `disable-model-invocation: true` — **only** Plan mode / opsx-propose / opsx-explore / explicit invoke.
+- `compose-from-patterns` has `disable-model-invocation: true` — **only** Plan mode / opsx-propose / opsx-explore / explicit invoke.
 - Root [AGENTS.md](./AGENTS.md) — rules for **maintaining this repository**, not the product pack.
 
 ### Annotation link
@@ -71,7 +73,10 @@ patterns/
 └── agent/                    # product pack
     ├── README.md
     ├── annotation.md
-    ├── rules/                # always-on policies
+    ├── rules/                # always-on policies by area
+    │   ├── catalog/
+    │   ├── js-ts/
+    │   └── workflow/
     └── skills/               # SKILL.md procedures
 ```
 
@@ -81,12 +86,12 @@ In **GoF**, each pattern has two demos: `<slug>-class.js` (OOP) and `<slug>-func
 
 ## Rules (`agent/rules/`)
 
-| Rule | File |
-|------|------|
-| Patterns catalog (wire into product) | [patterns-catalog.md](./agent/rules/patterns-catalog.md) |
-| JS/TS file structure | [js_file_structure.md](./agent/rules/js_file_structure.md) |
-| JS/TS file naming | [js_file_naming.md](./agent/rules/js_file_naming.md) |
-| PR/MR summary, review order, inline comments | [pr-inline-review-comments.md](./agent/rules/pr-inline-review-comments.md) |
+| Area | Rule | File |
+|------|------|------|
+| catalog | Patterns catalog (wire into product) | [patterns-catalog.md](./agent/rules/catalog/patterns-catalog.md) |
+| js-ts | JS/TS file structure | [file-structure.md](./agent/rules/js-ts/file-structure.md) |
+| js-ts | JS/TS file naming | [file-naming.md](./agent/rules/js-ts/file-naming.md) |
+| workflow | PR/MR summary, review order, inline comments | [pr-inline-review-comments.md](./agent/rules/workflow/pr-inline-review-comments.md) |
 
 Full index: [agent/rules/README.md](./agent/rules/README.md).
 
@@ -95,6 +100,7 @@ Full index: [agent/rules/README.md](./agent/rules/README.md).
 | Skill | When | File |
 |-------|------|------|
 | compose-from-patterns | Plan mode / opsx / explicit only | [SKILL.md](./agent/skills/compose-from-patterns/SKILL.md) |
+| ponytail | Lazy / YAGNI / smallest complete change (`lite` \| `full` \| `ultra`) | [SKILL.md](./agent/skills/ponytail/SKILL.md) |
 
 ---
 

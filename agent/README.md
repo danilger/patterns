@@ -12,8 +12,9 @@ Artifacts for agents **outside** this library: rules, skills, and annotation for
 
 - Pack: https://github.com/danilger/patterns/tree/main/agent
 - Rules: https://github.com/danilger/patterns/tree/main/agent/rules
-- Patterns-catalog rule: https://github.com/danilger/patterns/blob/main/agent/rules/patterns-catalog.md
-- Skill: https://github.com/danilger/patterns/blob/main/agent/skills/compose-from-patterns/SKILL.md
+- Patterns-catalog rule: https://github.com/danilger/patterns/blob/main/agent/rules/catalog/patterns-catalog.md
+- Skill (plans): https://github.com/danilger/patterns/blob/main/agent/skills/compose-from-patterns/SKILL.md
+- Skill (lazy / YAGNI): https://github.com/danilger/patterns/blob/main/agent/skills/ponytail/SKILL.md
 - Annotations: https://github.com/danilger/patterns/blob/main/agent/annotation.md
 - Pattern index: https://github.com/danilger/patterns/blob/main/README.md
 
@@ -37,5 +38,6 @@ The agent does **not** walk demos or relearn from `catalog/`: it already knows t
 ## Important
 
 - `compose-from-patterns` has `disable-model-invocation: true` — **only** Plan mode / opsx-propose / opsx-explore / explicit invoke.
+- `ponytail` — smallest complete change / YAGNI; levels `lite` \| `full` \| `ultra` (upstream: [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail)).
 - Root [../AGENTS.md](../AGENTS.md) — rules for **maintaining this repository**, not the same as product rules in `agent/rules/`.
 - Pattern files live only under [../catalog/](../catalog/).

@@ -7,45 +7,62 @@ These are **not** rules for maintaining this repository — see root
 [../../AGENTS.md](../../AGENTS.md). How to wire the whole pack:
 [../README.md](../README.md).
 
+## Layout
+
+```text
+agent/rules/
+├── README.md                 # this index
+├── catalog/                  # how agents use this library
+│   └── patterns-catalog.md
+├── js-ts/                    # JS/TS module conventions
+│   ├── file-structure.md
+│   └── file-naming.md
+└── workflow/                 # PR/MR and review process
+    └── pr-inline-review-comments.md
+```
+
+One rule = one `.md` file under an area folder. Do not leave bare rule
+files next to this README.
+
 ## Files
 
-| File | About | When to attach |
-|------|--------|----------------|
-| [patterns-catalog.md](./patterns-catalog.md) | How agents use danilger/patterns (names + `.md` `@see`, planning skill) | Any product that annotates code with catalog patterns |
-| [js_file_structure.md](./js_file_structure.md) | Export-first, `HELPERS` / `TYPES` / …, ~100-line threshold | JS/TS projects that want a shared module shape |
-| [js_file_naming.md](./js_file_naming.md) | `kebab-case` + role postfix (`.hook`, `.store`, `.<pattern>`, …) | JS/TS projects with hooks, stores, pattern modules |
-| [pr-inline-review-comments.md](./pr-inline-review-comments.md) | PR/MR body: summary + suggested review order; inline comments on the diff | Products where agents open PR/MR themselves |
+| Area | File | About | When to attach |
+|------|------|--------|----------------|
+| catalog | [patterns-catalog.md](./catalog/patterns-catalog.md) | How agents use danilger/patterns (names + `.md` `@see`, planning skill) | Any product that annotates code with catalog patterns |
+| js-ts | [file-structure.md](./js-ts/file-structure.md) | Export-first, `HELPERS` / `TYPES` / …, ~100-line threshold | JS/TS projects that want a shared module shape |
+| js-ts | [file-naming.md](./js-ts/file-naming.md) | `kebab-case` + role postfix (`.hook`, `.store`, `.<pattern>`, …) | JS/TS projects with hooks, stores, pattern modules |
+| workflow | [pr-inline-review-comments.md](./workflow/pr-inline-review-comments.md) | PR/MR body: summary + suggested review order; inline comments on the diff | Products where agents open PR/MR themselves |
 
 ## How to wire into a product
 
 1. Copy the needed `.md` files, for example:
    ```text
-   docs/agent_rules/patterns-catalog.md
-   docs/agent_rules/js_file_structure.md
-   docs/agent_rules/js_file_naming.md
-   docs/agent_rules/pr-inline-review-comments.md
+   docs/agent_rules/catalog/patterns-catalog.md
+   docs/agent_rules/js-ts/file-structure.md
+   docs/agent_rules/js-ts/file-naming.md
+   docs/agent_rules/workflow/pr-inline-review-comments.md
    ```
    or keep them next to `AGENTS.md` / in `.cursor/rules/`.
 2. In the product `AGENTS.md`, add links or short includes:
 
    ```markdown
    ## Patterns catalog
-   See docs/agent_rules/patterns-catalog.md
+   See docs/agent_rules/catalog/patterns-catalog.md
 
    ## File structure
-   See docs/agent_rules/js_file_structure.md
+   See docs/agent_rules/js-ts/file-structure.md
 
    ## Naming
-   See docs/agent_rules/js_file_naming.md
+   See docs/agent_rules/js-ts/file-naming.md
 
    ## PR/MR inline comments
-   See docs/agent_rules/pr-inline-review-comments.md
+   See docs/agent_rules/workflow/pr-inline-review-comments.md
    ```
 
 ## GitHub
 
 - Rules dir: https://github.com/danilger/patterns/tree/main/agent/rules
-- Patterns catalog: https://github.com/danilger/patterns/blob/main/agent/rules/patterns-catalog.md
-- Structure: https://github.com/danilger/patterns/blob/main/agent/rules/js_file_structure.md
-- Naming: https://github.com/danilger/patterns/blob/main/agent/rules/js_file_naming.md
-- PR/MR inline: https://github.com/danilger/patterns/blob/main/agent/rules/pr-inline-review-comments.md
+- Patterns catalog: https://github.com/danilger/patterns/blob/main/agent/rules/catalog/patterns-catalog.md
+- Structure: https://github.com/danilger/patterns/blob/main/agent/rules/js-ts/file-structure.md
+- Naming: https://github.com/danilger/patterns/blob/main/agent/rules/js-ts/file-naming.md
+- PR/MR inline: https://github.com/danilger/patterns/blob/main/agent/rules/workflow/pr-inline-review-comments.md
